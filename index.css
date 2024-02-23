@@ -1,0 +1,312 @@
+@import url("assets/PTF-OffBit-Trial-Fonts/OffBitTrial/font.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*pointer-events: none;*/
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.slot-game-wrapper {
+  width: 1920px;
+  height: 1080px;
+  background: url(./assets/Background.png);
+}
+
+.slot-game-bg-effects {
+  pointer-events: none;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 67px;
+  background: url(./assets/bgEffects.png) no-repeat;
+}
+
+.slot-game-flag {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s linear .7s;
+  width: 1920px;
+  height: 1080px;
+  top: -22px;
+  left: 50px;
+}
+
+.slot-game-fireworks {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s linear .7s;
+  width: 1920px;
+  height: 1080px;
+}
+
+.slot-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slot-game-logo {
+  margin-top: 14px;
+}
+
+.slot-game-video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 542px;
+  height: 334px;
+  border-radius: 12px;
+  background-color: rgba(61, 92, 153, 1);
+  z-index: 1;
+  margin-top: -44px;
+
+  .slot-game-video-container {
+    display: flex;
+    justify-content: center;
+    width: 526px;
+    height: 318px;
+    border-radius: 12px;
+    background: linear-gradient(179.95deg, #97b1d3 36.78%, #b8d8f9 74.41%);
+  }
+
+  .slot-game-video {
+    width: 510px;
+    height: 267px;
+    margin-top: 8px;
+    border-radius: 12px;
+    overflow-clip-margin: border-box;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  .slot-game-video-mute-button {
+    pointer-events: auto;
+    position: absolute;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    top: 394px;
+    left: 1192px;
+    cursor: pointer;
+  }
+  .slot-game-video-mute-button img {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.slot-game-machine-wrapper {
+  pointer-events: none;
+  margin-top: -56px;
+  z-index: 2;
+  background: url(./assets/slot/macine.png) no-repeat;
+  width: 1705px;
+  height: 536px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .slot-game-machine-prize-text2,
+  .slot-game-machine-prize-text3,
+  .slot-game-machine-prize-text1 {
+    margin-top: 15px;
+    font-family: OffBit;
+    font-weight: 700;
+    font-size: 56px;
+    color: rgba(58, 172, 255, 1);
+    line-height: 62px;
+    letter-spacing: 0em;
+    text-align: left;
+    filter: drop-shadow(0px 0px 3.620155096054077px rgba(44, 39, 255, 1));
+    background: linear-gradient(0deg, #3aacff, #3aacff),
+      linear-gradient(0deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+  }
+
+  .slot-game-machine-prize-text-second {
+    color: white !important;
+  }
+
+  .slot-game-machine-user-email-text {
+    font-family: OffBit;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: 0em;
+    text-align: left;
+    /*width: 703px;*/
+    height: 53px;
+    top: 871px;
+    left: 582px;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 7px;
+  }
+}
+
+.slot-game-machine-wrapper-container {
+  z-index: 133;
+  position: absolute;
+  margin-top: 17px;
+  width: 1481px;
+  height: 305px;
+  overflow: hidden;
+  top: 516px;
+  left: 205px;
+  padding: 0px 0px 0px 0px;
+}
+
+/*GAME MACHINE CONTAINER*/
+.slot-game-machine-container-shadow-top {
+  position: absolute;
+  z-index: 9999;
+  width: 1482px;
+  height: 39px;
+  top: 532px;
+  left: 216px;
+  opacity: 0.77;
+  background: linear-gradient(
+    180deg,
+    #0f1214 13.62%,
+    rgba(15, 18, 20, 0) 86.44%
+  );
+}
+
+.slot-game-machine-container-shadow-bottom {
+  position: absolute;
+  z-index: 9999;
+  width: 1482px;
+  height: 39px;
+  top: 796px;
+  left: 216px;
+  opacity: 0.77;
+  background: linear-gradient(0deg, #0f1214 13.62%, rgba(15, 18, 20, 0) 86.44%);
+}
+
+.slot-game-machine-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 56px;
+  width: 1506px;
+}
+
+.slot-game-machine-column-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  top: -97px;
+}
+
+.slot-game-machine-column-container1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  top: 0px;
+}
+
+.slot-game-machine-column-container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.slot-game-machine-column1 {
+  height: 402px;
+  width: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.slot-game-machine-column2 {
+  height: 402px;
+  width: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.slot-game-machine-row {
+  font-family: Springwood;
+  font-size: 123px;
+  font-weight: 400;
+  line-height: 159px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: -45px;
+  color: rgba(0, 0, 0, 23%);
+}
+
+.char {
+  font-family: Springwood;
+  font-size: 123px;
+  font-weight: 400;
+  line-height: 159px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: -45px;
+}
+/*SPINNER*/
+
+.slot-game-spinner-wrapper {
+  position: absolute;
+  width: 112px;
+  height: 265px;
+  top: 492px;
+  left: 1700px;
+
+  .slot-game-spinner {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+}
+
+.slot-game-spinner-button-winner-container {
+  pointer-events: auto;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s linear 1.5s;
+  cursor: pointer;
+  background: url("./assets/button/background.png") no-repeat;
+  width: 303px;
+  left: 1570px;
+  top: 958px;
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    pointer-events: auto;
+    animation: ease-in-out 1s buttonScale;
+  }
+}

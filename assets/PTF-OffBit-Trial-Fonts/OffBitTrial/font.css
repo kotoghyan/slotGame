@@ -1,0 +1,21 @@
+@font-face {
+    font-family: OffBit;
+    font-style: normal;
+    font-display: swap;
+    src:
+            local('OffBit'),
+            local('OffBit Regular'),
+            local('OffBit-Regular'),
+            url('./TTF/OffBitTrial-Bold.ttf')  format('truetype'),
+            url('./OTF/OffBitTrial-Bold.otf')  format('truetype')
+}
+
+@font-face {
+    font-family: Springwood;
+    font-style: normal;
+    font-display: swap;
+    src:
+            local('Springwood Display DEMO'),
+            local('Springwood-Display-DEMO'),
+            url('./Springwood Display DEMO.otf') format('truetype')
+}
