@@ -488,6 +488,14 @@ function createSpinner() {
     spinnerContainer.appendChild(spinnerImage);
 }
 
+const spinnerImages = [];
+spinnerImagesPaths.forEach((path) => {
+    const img = new Image();
+    img.src = path;
+    spinnerImages.push(img);
+    console.log(spinnerImages)
+})
+
 /**
  * Function to animate the spinner
  * @param {HTMLImageElement} spinnerImage - The spinner image
@@ -496,23 +504,26 @@ function animateSpinner(spinnerImage) {
     const startSpinner = document.getElementById("startSpinner");
 
     let index = 0;
-    const intervalId = setInterval(() => {
+
+    function animate() {
         spinnerImage.src = spinnerImagesPaths[index];
         index++;
-        if (index === spinnerImagesPaths.length) {
-            clearInterval(intervalId);
 
+        if (index < spinnerImagesPaths.length) {
+            requestAnimationFrame(animate);
+        } else {
             // we need to get the win condition from the server response and set it here i wait winner in string format
             //need assign to winCondition hear
             fetch().then((res) => {
                 winCondition = res.winner.toUpperCase();
             });
 
-
             spin();
         }
-    }, 30);
-    startSpinner.removeEventListener('click', start)
+    }
+
+    animate();
+    startSpinner.removeEventListener('click', start);
 }
 
 
