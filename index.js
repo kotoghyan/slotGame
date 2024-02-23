@@ -1,9 +1,3 @@
-// Importing the animejs library
-// import anime from "./node_modules/animejs/lib/anime.es.js";
-
-// Initializing the spin count
-let spinCount = 1;
-
 // Selecting the necessary elements from the DOM
 const volumeButton = document.getElementById("slotGameVideoVolumeControlButton");
 const volumeIcon = document.getElementById("slotGameVideoVolumeControl");
@@ -15,6 +9,9 @@ const userName = document.querySelector(".slot-game-machine-user-email-text");
 const blueText1 = document.querySelector(".slot-game-machine-prize-text2");
 const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
+
+// Initializing the spin count
+let spinCount = 1;
 
 
 // Setting the initial text content for the user name
@@ -35,7 +32,7 @@ blueText2.textContent = "CREDIT+"; //PLACEHOLDER
 prize.textContent = "$2500"; //PLACEHOLDER
 
 // Initializing the win condition
-let winCondition = "";
+let winCondition = ""; //We need to get the win condition from the server response and set it here
 
 
 /**
@@ -46,7 +43,7 @@ function fetch() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve({
-                string: "asdfghjklmnn",
+                winner: "asdfghjklmnn",
                 state: "win",
                 error: "asd",
             });
@@ -504,9 +501,14 @@ function animateSpinner(spinnerImage) {
         index++;
         if (index === spinnerImagesPaths.length) {
             clearInterval(intervalId);
+
+            // we need to get the win condition from the server response and set it here i wait winner in string format
+            //need assign to winCondition hear
             fetch().then((res) => {
-                winCondition = res.string.toUpperCase();
+                winCondition = res.winner.toUpperCase();
             });
+
+
             spin();
         }
     }, 30);
