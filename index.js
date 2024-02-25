@@ -21,13 +21,14 @@ userName.textContent = "User Name";  //PLACEHOLDER
  * Function to set the victory position text
  */
 function victoryPosition() {
-    if (spinCount === 0) return
+    if (spinCount === 0) return;
 
-    blueText1.textContent = `${spinCount}ND PRIZE!`//PLACEHOLDER
+    const prizeText = ["1ST", "2ND", "3RD"];
+    blueText1.textContent = `${prizeText[spinCount - 1]} PRIZE!`; //PLACEHOLDER
 }
 
-// Setting the initial text content for the prize and credit
-blueText1.textContent = `${spinCount}ND PRIZE!`; //PLACEHOLDER
+victoryPosition()
+
 blueText2.textContent = "CREDIT"; //PLACEHOLDER
 prize.textContent = "$2500"; //PLACEHOLDER
 
