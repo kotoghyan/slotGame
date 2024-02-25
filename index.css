@@ -17,16 +17,15 @@
 .slot-game-wrapper {
   width: 1920px;
   height: 1080px;
-  background: url(./assets/Background.png);
+  /*background: url(./assets/Background.png);*/
 }
 
 .slot-game-bg-effects {
+  width: 1920px;
+  height: 1080px;
   pointer-events: none;
   position: absolute;
-  width: inherit;
-  height: inherit;
-  top: 67px;
-  background: url(./assets/bgEffects.png) no-repeat;
+  z-index: -1;
 }
 
 .slot-game-flag {

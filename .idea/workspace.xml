@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="added border radius slot-game-machine-prize-containers">
+    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="changed text for prizes">
+      <change afterPath="$PROJECT_DIR$/assets/BG.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +73,10 @@
       <workItem from="1708681568317" duration="2863000" />
       <workItem from="1708686612426" duration="4124000" />
       <workItem from="1708695014324" duration="3262000" />
-      <workItem from="1708841970012" duration="4322000" />
+      <workItem from="1708841970012" duration="4948000" />
+      <workItem from="1708848329505" duration="1251000" />
+      <workItem from="1708850737777" duration="32000" />
+      <workItem from="1708867687177" duration="1285000" />
     </task>
     <task id="LOCAL-00001" summary="add fireworks 5-58">
       <option name="closed" value="true" />
@@ -152,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708844080752</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="changed text for prizes">
+      <option name="closed" value="true" />
+      <created>1708848073603</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708848073603</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +184,7 @@
     <MESSAGE value="changed setInterval to requestAnimationFrame" />
     <MESSAGE value="added marquee class for running path" />
     <MESSAGE value="added border radius slot-game-machine-prize-containers" />
-    <option name="LAST_COMMIT_MESSAGE" value="added border radius slot-game-machine-prize-containers" />
+    <MESSAGE value="changed text for prizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed text for prizes" />
   </component>
 </project>

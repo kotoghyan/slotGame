@@ -387,9 +387,7 @@ function crateButtonWinnerContainer() {
     button.appendChild(imgButton)
 
     // Adding an event listener to the button to restart the game when clicked
-    button.addEventListener("click", () => {
-        restartGame()
-    });
+    button.addEventListener("click", restartGame);
 }
 
 /**
