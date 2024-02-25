@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="added workspace.xml">
+    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="changed setInterval to requestAnimationFrame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +39,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/var/www/html/SlotGameGit/assets/tv",
+    "last_opened_file_path": "/var/www/html/SlotGameGit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,7 +70,9 @@
       <option name="presentableId" value="Default" />
       <updated>1708681567546</updated>
       <workItem from="1708681568317" duration="2863000" />
-      <workItem from="1708686612426" duration="2978000" />
+      <workItem from="1708686612426" duration="4124000" />
+      <workItem from="1708695014324" duration="3262000" />
+      <workItem from="1708841970012" duration="1896000" />
     </task>
     <task id="LOCAL-00001" summary="add fireworks 5-58">
       <option name="closed" value="true" />
@@ -126,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708691188000</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed setInterval to requestAnimationFrame">
+      <option name="closed" value="true" />
+      <created>1708692093565</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708692093565</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +153,7 @@
     <MESSAGE value="add fireworks 193-221" />
     <MESSAGE value="added Description for win condition" />
     <MESSAGE value="added workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="added workspace.xml" />
+    <MESSAGE value="changed setInterval to requestAnimationFrame" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed setInterval to requestAnimationFrame" />
   </component>
 </project>

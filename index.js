@@ -11,7 +11,7 @@ const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
 
 // Initializing the spin count
-let spinCount = 1;
+let spinCount = 3;
 
 
 // Setting the initial text content for the user name
@@ -21,14 +21,14 @@ userName.textContent = "User Name";  //PLACEHOLDER
  * Function to set the victory position text
  */
 function victoryPosition() {
-    if (spinCount === 4) return
+    if (spinCount === 0) return
 
     blueText1.textContent = `${spinCount}ND PRIZE!`//PLACEHOLDER
 }
 
 // Setting the initial text content for the prize and credit
 blueText1.textContent = `${spinCount}ND PRIZE!`; //PLACEHOLDER
-blueText2.textContent = "CREDIT+"; //PLACEHOLDER
+blueText2.textContent = "CREDIT"; //PLACEHOLDER
 prize.textContent = "$2500"; //PLACEHOLDER
 
 // Initializing the win condition
@@ -600,9 +600,9 @@ function winner() {
  * Function to spin the slot machine
  */
 function spin() {
-    if (spinCount === 4) return
+    if (spinCount === 0) return
 
-    spinCount++
+    spinCount--
 
     let loops1 = 0;
     let loops2 = 2;
