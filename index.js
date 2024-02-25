@@ -493,7 +493,6 @@ spinnerImagesPaths.forEach((path) => {
     const img = new Image();
     img.src = path;
     spinnerImages.push(img);
-    console.log(spinnerImages)
 })
 
 /**

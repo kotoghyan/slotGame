@@ -124,6 +124,7 @@
   .slot-game-machine-prize-text2,
   .slot-game-machine-prize-text3,
   .slot-game-machine-prize-text1 {
+    border-radius: 24px;
     width: 1631px;
     margin-top: 15px;
     font-family: OffBit;
