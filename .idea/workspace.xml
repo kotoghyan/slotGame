@@ -4,11 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="changed text for prizes">
-      <change afterPath="$PROJECT_DIR$/assets/BG.mp4" afterDir="false" />
+    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="Added new BackGround video">
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00358.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00359.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00360.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00361.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00362.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00363.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00364.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00365.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00366.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00367.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00368.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00369.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00370.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00371.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00372.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00373.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00374.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00375.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00376.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00377.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00378.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00379.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00381.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00382.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00383.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00384.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00385.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00386.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00387.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00388.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00389.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/bronzeFlag/Bronse_Flag_00390.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00358.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00359.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00360.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00361.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00362.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00363.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00364.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00365.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00366.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00367.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00368.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00369.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00370.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00371.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00372.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00373.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00374.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00375.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00376.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00377.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00378.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00379.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00380.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00381.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00382.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00383.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00384.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00385.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00386.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00387.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/slot/goldenFlag/Gold_Flag_00388.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,21 +97,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/var/www/html/SlotGameGit",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "http.proxy",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/var/www/html/SlotGameGit&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/tv" />
@@ -76,7 +138,9 @@
       <workItem from="1708841970012" duration="4948000" />
       <workItem from="1708848329505" duration="1251000" />
       <workItem from="1708850737777" duration="32000" />
-      <workItem from="1708867687177" duration="1285000" />
+      <workItem from="1708867687177" duration="1993000" />
+      <workItem from="1708930956554" duration="977000" />
+      <workItem from="1708932704059" duration="4650000" />
     </task>
     <task id="LOCAL-00001" summary="add fireworks 5-58">
       <option name="closed" value="true" />
@@ -166,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708848073603</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added new BackGround video">
+      <option name="closed" value="true" />
+      <created>1708893257584</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708893257585</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +257,7 @@
     <MESSAGE value="added marquee class for running path" />
     <MESSAGE value="added border radius slot-game-machine-prize-containers" />
     <MESSAGE value="changed text for prizes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed text for prizes" />
+    <MESSAGE value="Added new BackGround video" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new BackGround video" />
   </component>
 </project>

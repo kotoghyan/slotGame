@@ -101,7 +101,42 @@ const spinnerImagesPaths = [
 ];
 
 // Array of paths for the flag images
-const flagImagesPaths = [
+const bronzeFlagImagesPaths = [
+    './assets/slot/bronzeFlag/Bronse_Flag_00358.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00359.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00360.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00361.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00362.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00363.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00364.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00365.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00366.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00367.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00368.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00369.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00370.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00371.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00372.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00373.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00374.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00375.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00376.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00377.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00378.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00379.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00380.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00381.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00382.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00383.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00384.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00385.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00386.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00387.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00388.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00389.png',
+    './assets/slot/bronzeFlag/Bronse_Flag_00390.png'
+]
+const silverFlagImagesPaths = [
     './assets/slot/flag/Flag_00080.png',
     './assets/slot/flag/Flag_00081.png',
     './assets/slot/flag/Flag_00082.png',
@@ -135,6 +170,39 @@ const flagImagesPaths = [
     './assets/slot/flag/Flag_00110.png',
     './assets/slot/flag/Flag_00111.png',
     './assets/slot/flag/Flag_00112.png',
+]
+const goldFlagImagesPaths = [
+    './assets/slot/goldenFlag/Gold_Flag_00358.png',
+    './assets/slot/goldenFlag/Gold_Flag_00359.png',
+    './assets/slot/goldenFlag/Gold_Flag_00360.png',
+    './assets/slot/goldenFlag/Gold_Flag_00361.png',
+    './assets/slot/goldenFlag/Gold_Flag_00362.png',
+    './assets/slot/goldenFlag/Gold_Flag_00363.png',
+    './assets/slot/goldenFlag/Gold_Flag_00364.png',
+    './assets/slot/goldenFlag/Gold_Flag_00365.png',
+    './assets/slot/goldenFlag/Gold_Flag_00366.png',
+    './assets/slot/goldenFlag/Gold_Flag_00367.png',
+    './assets/slot/goldenFlag/Gold_Flag_00368.png',
+    './assets/slot/goldenFlag/Gold_Flag_00369.png',
+    './assets/slot/goldenFlag/Gold_Flag_00370.png',
+    './assets/slot/goldenFlag/Gold_Flag_00371.png',
+    './assets/slot/goldenFlag/Gold_Flag_00372.png',
+    './assets/slot/goldenFlag/Gold_Flag_00373.png',
+    './assets/slot/goldenFlag/Gold_Flag_00374.png',
+    './assets/slot/goldenFlag/Gold_Flag_00375.png',
+    './assets/slot/goldenFlag/Gold_Flag_00376.png',
+    './assets/slot/goldenFlag/Gold_Flag_00377.png',
+    './assets/slot/goldenFlag/Gold_Flag_00378.png',
+    './assets/slot/goldenFlag/Gold_Flag_00379.png',
+    './assets/slot/goldenFlag/Gold_Flag_00380.png',
+    './assets/slot/goldenFlag/Gold_Flag_00381.png',
+    './assets/slot/goldenFlag/Gold_Flag_00382.png',
+    './assets/slot/goldenFlag/Gold_Flag_00383.png',
+    './assets/slot/goldenFlag/Gold_Flag_00384.png',
+    './assets/slot/goldenFlag/Gold_Flag_00385.png',
+    './assets/slot/goldenFlag/Gold_Flag_00386.png',
+    './assets/slot/goldenFlag/Gold_Flag_00387.png',
+    './assets/slot/goldenFlag/Gold_Flag_00388.png',
 ]
 
 // Array of paths for the fireworks images
@@ -528,17 +596,32 @@ function animateSpinner(spinnerImage) {
 let flagAnimationId;
 let fireworksAnimationId;
 
-const flagImages = [];
-flagImagesPaths.forEach((path) => {
+const silverFlagImages = [];
+silverFlagImagesPaths.forEach((path) => {
     const img = new Image();
     img.src = path;
-    flagImages.push(img);
+    silverFlagImages.push(img);
 });
+
+const bronzeFlagImages = [];
+bronzeFlagImagesPaths.forEach((path) => {
+    const img = new Image();
+    img.src = path;
+    bronzeFlagImages.push(img);
+})
+
+const goldFlagImages = [];
+goldFlagImagesPaths.forEach((path) => {
+    const img = new Image();
+    img.src = path;
+    goldFlagImages.push(img);
+})
+
 
 /**
  * Function to animate the flag
  */
-function animateFlag() {
+function animateFlag(flagImages) {
     let index = 0;
 
     function animate() {
@@ -590,7 +673,17 @@ function stopFireworksAnimation() {
  * Function to declare the winner
  */
 function winner() {
-    animateFlag()
+    // animateFlag()
+    if (spinCount === 3) {
+        animateFlag(bronzeFlagImages)
+        console.log('bronze', bronzeFlagImages)
+    } else if (spinCount === 2) {
+        animateFlag(silverFlagImages)
+    } else if (spinCount === 1) {
+        animateFlag(goldFlagImages)
+    }
+
+    spinCount--;
     animateFireworks()
 }
 
@@ -599,8 +692,6 @@ function winner() {
  */
 function spin() {
     if (spinCount === 0) return
-
-    spinCount--
 
     let loops1 = 0;
     let loops2 = 2;
@@ -693,7 +784,7 @@ function spin() {
                                         duration: 2500 + val,
                                         easing: "easeOutQuart",
                                         update: function (anim) {
-                                            if (anim.progress > 50 && update === 0) {
+                                                if (anim.progress >= 90 && update === 0) {
                                                 update = 1
                                                 flag.style.opacity = 1
                                                 fireworks.style.opacity = 1

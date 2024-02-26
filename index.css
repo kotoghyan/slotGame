@@ -32,7 +32,7 @@
   position: absolute;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s linear .7s;
+  transition: opacity 0.3s linear .5s;
   width: 1920px;
   height: 1080px;
   top: -22px;
@@ -43,7 +43,7 @@
   position: absolute;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s linear .7s;
+  transition: opacity 0.3s linear .5s;
   width: 1920px;
   height: 1080px;
 }
