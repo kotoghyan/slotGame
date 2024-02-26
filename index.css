@@ -149,8 +149,9 @@
     font-weight: 700;
     line-height: 53px;
     letter-spacing: 0em;
+    opacity: 0;
+    transition: opacity 0.3s linear .7s;
     text-align: left;
-    /*width: 703px;*/
     height: 53px;
     top: 871px;
     left: 582px;
