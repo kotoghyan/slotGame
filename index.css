@@ -254,7 +254,17 @@
   position: relative;
 }
 
-.slot-game-machine-column1 {
+.slot-game-machine-column1:nth-child(odd) {
+  height: 279px;
+  width: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  top: 0px;
+}
+.slot-game-machine-column1:nth-child(even) {
   height: 402px;
   width: 108px;
   display: flex;
@@ -262,6 +272,7 @@
   align-items: center;
   justify-content: flex-end;
   position: relative;
+  top: 0px;
 }
 
 .slot-game-machine-column2 {

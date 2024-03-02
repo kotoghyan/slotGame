@@ -3,7 +3,9 @@ const volumeButton = document.getElementById("slotGameVideoVolumeControlButton")
 const volumeIcon = document.getElementById("slotGameVideoVolumeControl");
 const video = document.getElementById("slotGameVideo");
 const flag = document.querySelector(".slot-game-flag");
-const fireworks = document.querySelector(".slot-game-fireworks");
+
+let flagAnimationId;
+// const fireworks = document.querySelector(".slot-game-fireworks");
 
 const userName = document.querySelector(".slot-game-machine-user-email-text");
 const blueText1 = document.querySelector(".slot-game-machine-prize-text2");
@@ -19,11 +21,15 @@ let email = ""
 
 
 // Setting the initial text content for the user name
-function setUserName(email = "") {
+function setUserName(email = "") { //PLACEHOLDER
   userName.textContent = email
 }
 
-// userName.textContent = "User Name";  //PLACEHOLDER
+
+// function stopFlagAnimation() {
+//   cancelAnimationFrame(flagAnimationId);
+// }
+
 
 /**
  * Function to set the victory position text
@@ -35,12 +41,24 @@ function victoryPosition() {
   blueText1.textContent = `${prizeText[spinCount - 1]} PRIZE!`; //PLACEHOLDER
 }
 
-victoryPosition()
 
 blueText2.textContent = "CREDIT"; //PLACEHOLDER
 prize.textContent = "$2500"; //PLACEHOLDER
 
 
+//TEMP start
+let anim1Time1
+let anim1Time2
+let anim1Time3
+let del = 1200
+
+function clearAnimTimeouts() {
+  clearTimeout(anim1Time1)
+  clearTimeout(anim1Time2)
+  clearTimeout(anim1Time3)
+  del = 1200
+}
+//TEMP end
 /**
  * Function to simulate a fetch request
  * @returns {Promise} A promise that resolves with a mock response object
@@ -106,39 +124,39 @@ const spinnerImagesPaths = [
 
 // Array of paths for the flag images
 const bronzeFlagImagesPaths = [
-  './assets/slot/bronzeFlag/Bronse_Flag_00358.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00359.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00360.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00361.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00362.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00363.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00364.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00365.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00366.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00367.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00368.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00369.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00370.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00371.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00372.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00373.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00374.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00375.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00376.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00377.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00378.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00379.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00380.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00381.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00382.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00383.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00384.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00385.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00386.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00387.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00388.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00389.png',
-  './assets/slot/bronzeFlag/Bronse_Flag_00390.png'
+  './assets/slot/bronzeFlag/flag_00000.png',
+  './assets/slot/bronzeFlag/flag_00001.png',
+  './assets/slot/bronzeFlag/flag_00002.png',
+  './assets/slot/bronzeFlag/flag_00003.png',
+  './assets/slot/bronzeFlag/flag_00004.png',
+  './assets/slot/bronzeFlag/flag_00005.png',
+  './assets/slot/bronzeFlag/flag_00006.png',
+  './assets/slot/bronzeFlag/flag_00007.png',
+  './assets/slot/bronzeFlag/flag_00008.png',
+  './assets/slot/bronzeFlag/flag_00009.png',
+  './assets/slot/bronzeFlag/flag_00010.png',
+  './assets/slot/bronzeFlag/flag_00011.png',
+  './assets/slot/bronzeFlag/flag_00012.png',
+  './assets/slot/bronzeFlag/flag_00013.png',
+  './assets/slot/bronzeFlag/flag_00014.png',
+  './assets/slot/bronzeFlag/flag_00015.png',
+  './assets/slot/bronzeFlag/flag_00016.png',
+  './assets/slot/bronzeFlag/flag_00017.png',
+  './assets/slot/bronzeFlag/flag_00018.png',
+  './assets/slot/bronzeFlag/flag_00019.png',
+  './assets/slot/bronzeFlag/flag_00020.png',
+  './assets/slot/bronzeFlag/flag_00021.png',
+  './assets/slot/bronzeFlag/flag_00022.png',
+  './assets/slot/bronzeFlag/flag_00023.png',
+  './assets/slot/bronzeFlag/flag_00024.png',
+  './assets/slot/bronzeFlag/flag_00025.png',
+  './assets/slot/bronzeFlag/flag_00026.png',
+  './assets/slot/bronzeFlag/flag_00027.png',
+  './assets/slot/bronzeFlag/flag_00028.png',
+  './assets/slot/bronzeFlag/flag_00029.png',
+  './assets/slot/bronzeFlag/flag_00030.png',
+  // './assets/slot/bronzeFlag/',
+  // './assets/slot/bronzeFlag/'
 ]
 const silverFlagImagesPaths = [
   './assets/slot/flag/Flag_00080.png',
@@ -172,263 +190,263 @@ const silverFlagImagesPaths = [
   './assets/slot/flag/Flag_00108.png',
   './assets/slot/flag/Flag_00109.png',
   './assets/slot/flag/Flag_00110.png',
-  './assets/slot/flag/Flag_00111.png',
-  './assets/slot/flag/Flag_00112.png',
+  // './assets/slot/flag/Flag_00111.png',
+  // './assets/slot/flag/Flag_00112.png',
 ]
 const goldFlagImagesPaths = [
-  './assets/slot/goldenFlag/Gold_Flag_00358.png',
-  './assets/slot/goldenFlag/Gold_Flag_00359.png',
-  './assets/slot/goldenFlag/Gold_Flag_00360.png',
-  './assets/slot/goldenFlag/Gold_Flag_00361.png',
-  './assets/slot/goldenFlag/Gold_Flag_00362.png',
-  './assets/slot/goldenFlag/Gold_Flag_00363.png',
-  './assets/slot/goldenFlag/Gold_Flag_00364.png',
-  './assets/slot/goldenFlag/Gold_Flag_00365.png',
-  './assets/slot/goldenFlag/Gold_Flag_00366.png',
-  './assets/slot/goldenFlag/Gold_Flag_00367.png',
-  './assets/slot/goldenFlag/Gold_Flag_00368.png',
-  './assets/slot/goldenFlag/Gold_Flag_00369.png',
-  './assets/slot/goldenFlag/Gold_Flag_00370.png',
-  './assets/slot/goldenFlag/Gold_Flag_00371.png',
-  './assets/slot/goldenFlag/Gold_Flag_00372.png',
-  './assets/slot/goldenFlag/Gold_Flag_00373.png',
-  './assets/slot/goldenFlag/Gold_Flag_00374.png',
-  './assets/slot/goldenFlag/Gold_Flag_00375.png',
-  './assets/slot/goldenFlag/Gold_Flag_00376.png',
-  './assets/slot/goldenFlag/Gold_Flag_00377.png',
-  './assets/slot/goldenFlag/Gold_Flag_00378.png',
-  './assets/slot/goldenFlag/Gold_Flag_00379.png',
-  './assets/slot/goldenFlag/Gold_Flag_00380.png',
-  './assets/slot/goldenFlag/Gold_Flag_00381.png',
-  './assets/slot/goldenFlag/Gold_Flag_00382.png',
-  './assets/slot/goldenFlag/Gold_Flag_00383.png',
-  './assets/slot/goldenFlag/Gold_Flag_00384.png',
-  './assets/slot/goldenFlag/Gold_Flag_00385.png',
-  './assets/slot/goldenFlag/Gold_Flag_00386.png',
-  './assets/slot/goldenFlag/Gold_Flag_00387.png',
-  './assets/slot/goldenFlag/Gold_Flag_00388.png',
+  './assets/slot/goldenFlag/flag_00000.png',
+  './assets/slot/goldenFlag/flag_00001.png',
+  './assets/slot/goldenFlag/flag_00002.png',
+  './assets/slot/goldenFlag/flag_00003.png',
+  './assets/slot/goldenFlag/flag_00004.png',
+  './assets/slot/goldenFlag/flag_00005.png',
+  './assets/slot/goldenFlag/flag_00006.png',
+  './assets/slot/goldenFlag/flag_00007.png',
+  './assets/slot/goldenFlag/flag_00008.png',
+  './assets/slot/goldenFlag/flag_00009.png',
+  './assets/slot/goldenFlag/flag_00010.png',
+  './assets/slot/goldenFlag/flag_00011.png',
+  './assets/slot/goldenFlag/flag_00012.png',
+  './assets/slot/goldenFlag/flag_00013.png',
+  './assets/slot/goldenFlag/flag_00014.png',
+  './assets/slot/goldenFlag/flag_00015.png',
+  './assets/slot/goldenFlag/flag_00016.png',
+  './assets/slot/goldenFlag/flag_00017.png',
+  './assets/slot/goldenFlag/flag_00018.png',
+  './assets/slot/goldenFlag/flag_00019.png',
+  './assets/slot/goldenFlag/flag_00020.png',
+  './assets/slot/goldenFlag/flag_00021.png',
+  './assets/slot/goldenFlag/flag_00022.png',
+  './assets/slot/goldenFlag/flag_00023.png',
+  './assets/slot/goldenFlag/flag_00024.png',
+  './assets/slot/goldenFlag/flag_00025.png',
+  './assets/slot/goldenFlag/flag_00026.png',
+  './assets/slot/goldenFlag/flag_00027.png',
+  './assets/slot/goldenFlag/flag_00028.png',
+  './assets/slot/goldenFlag/flag_00029.png',
+  './assets/slot/goldenFlag/flag_00030.png',
 ]
 
 // Array of paths for the fireworks images
-const fireworksImagesPaths = [
-  './assets/slot/fireworks/Salut_00005.png',
-  './assets/slot/fireworks/Salut_00006.png',
-  './assets/slot/fireworks/Salut_00007.png',
-  './assets/slot/fireworks/Salut_00008.png',
-  './assets/slot/fireworks/Salut_00009.png',
-  './assets/slot/fireworks/Salut_00010.png',
-  './assets/slot/fireworks/Salut_00011.png',
-  './assets/slot/fireworks/Salut_00012.png',
-  './assets/slot/fireworks/Salut_00013.png',
-  './assets/slot/fireworks/Salut_00014.png',
-  './assets/slot/fireworks/Salut_00015.png',
-  './assets/slot/fireworks/Salut_00016.png',
-  './assets/slot/fireworks/Salut_00017.png',
-  './assets/slot/fireworks/Salut_00018.png',
-  './assets/slot/fireworks/Salut_00019.png',
-  './assets/slot/fireworks/Salut_00020.png',
-  './assets/slot/fireworks/Salut_00021.png',
-  './assets/slot/fireworks/Salut_00022.png',
-  './assets/slot/fireworks/Salut_00023.png',
-  './assets/slot/fireworks/Salut_00024.png',
-  './assets/slot/fireworks/Salut_00025.png',
-  './assets/slot/fireworks/Salut_00026.png',
-  './assets/slot/fireworks/Salut_00027.png',
-  './assets/slot/fireworks/Salut_00028.png',
-  './assets/slot/fireworks/Salut_00029.png',
-  './assets/slot/fireworks/Salut_00030.png',
-  './assets/slot/fireworks/Salut_00031.png',
-  './assets/slot/fireworks/Salut_00032.png',
-  './assets/slot/fireworks/Salut_00033.png',
-  './assets/slot/fireworks/Salut_00034.png',
-  './assets/slot/fireworks/Salut_00035.png',
-  './assets/slot/fireworks/Salut_00036.png',
-  './assets/slot/fireworks/Salut_00037.png',
-  './assets/slot/fireworks/Salut_00038.png',
-  './assets/slot/fireworks/Salut_00039.png',
-  './assets/slot/fireworks/Salut_00040.png',
-  './assets/slot/fireworks/Salut_00041.png',
-  './assets/slot/fireworks/Salut_00042.png',
-  './assets/slot/fireworks/Salut_00043.png',
-  './assets/slot/fireworks/Salut_00044.png',
-  './assets/slot/fireworks/Salut_00045.png',
-  './assets/slot/fireworks/Salut_00046.png',
-  './assets/slot/fireworks/Salut_00047.png',
-  './assets/slot/fireworks/Salut_00048.png',
-  './assets/slot/fireworks/Salut_00049.png',
-  './assets/slot/fireworks/Salut_00050.png',
-  './assets/slot/fireworks/Salut_00051.png',
-  './assets/slot/fireworks/Salut_00052.png',
-  './assets/slot/fireworks/Salut_00053.png',
-  './assets/slot/fireworks/Salut_00054.png',
-  './assets/slot/fireworks/Salut_00055.png',
-  './assets/slot/fireworks/Salut_00056.png',
-  './assets/slot/fireworks/Salut_00057.png',
-  './assets/slot/fireworks/Salut_00058.png',
-  './assets/slot/fireworks/Salut_00059.png',
-  './assets/slot/fireworks/Salut_00060.png',
-  './assets/slot/fireworks/Salut_00061.png',
-  './assets/slot/fireworks/Salut_00062.png',
-  './assets/slot/fireworks/Salut_00063.png',
-  './assets/slot/fireworks/Salut_00064.png',
-  './assets/slot/fireworks/Salut_00065.png',
-  './assets/slot/fireworks/Salut_00066.png',
-  './assets/slot/fireworks/Salut_00067.png',
-  './assets/slot/fireworks/Salut_00068.png',
-  './assets/slot/fireworks/Salut_00069.png',
-  './assets/slot/fireworks/Salut_00070.png',
-  './assets/slot/fireworks/Salut_00071.png',
-  './assets/slot/fireworks/Salut_00072.png',
-  './assets/slot/fireworks/Salut_00073.png',
-  './assets/slot/fireworks/Salut_00074.png',
-  './assets/slot/fireworks/Salut_00075.png',
-  './assets/slot/fireworks/Salut_00076.png',
-  './assets/slot/fireworks/Salut_00077.png',
-  './assets/slot/fireworks/Salut_00078.png',
-  './assets/slot/fireworks/Salut_00079.png',
-  './assets/slot/fireworks/Salut_00080.png',
-  './assets/slot/fireworks/Salut_00081.png',
-  './assets/slot/fireworks/Salut_00082.png',
-  './assets/slot/fireworks/Salut_00083.png',
-  './assets/slot/fireworks/Salut_00084.png',
-  './assets/slot/fireworks/Salut_00085.png',
-  './assets/slot/fireworks/Salut_00086.png',
-  './assets/slot/fireworks/Salut_00087.png',
-  './assets/slot/fireworks/Salut_00088.png',
-  './assets/slot/fireworks/Salut_00089.png',
-  './assets/slot/fireworks/Salut_00090.png',
-  './assets/slot/fireworks/Salut_00091.png',
-  './assets/slot/fireworks/Salut_00092.png',
-  './assets/slot/fireworks/Salut_00093.png',
-  './assets/slot/fireworks/Salut_00094.png',
-  './assets/slot/fireworks/Salut_00095.png',
-  './assets/slot/fireworks/Salut_00096.png',
-  './assets/slot/fireworks/Salut_00097.png',
-  './assets/slot/fireworks/Salut_00098.png',
-  './assets/slot/fireworks/Salut_00099.png',
-  './assets/slot/fireworks/Salut_00100.png',
-  './assets/slot/fireworks/Salut_00101.png',
-  './assets/slot/fireworks/Salut_00102.png',
-  './assets/slot/fireworks/Salut_00103.png',
-  './assets/slot/fireworks/Salut_00104.png',
-  './assets/slot/fireworks/Salut_00105.png',
-  './assets/slot/fireworks/Salut_00106.png',
-  './assets/slot/fireworks/Salut_00107.png',
-  './assets/slot/fireworks/Salut_00108.png',
-  './assets/slot/fireworks/Salut_00109.png',
-  './assets/slot/fireworks/Salut_00110.png',
-  './assets/slot/fireworks/Salut_00111.png',
-  './assets/slot/fireworks/Salut_00112.png',
-  './assets/slot/fireworks/Salut_00113.png',
-  './assets/slot/fireworks/Salut_00114.png',
-  './assets/slot/fireworks/Salut_00115.png',
-  './assets/slot/fireworks/Salut_00116.png',
-  './assets/slot/fireworks/Salut_00117.png',
-  './assets/slot/fireworks/Salut_00118.png',
-  './assets/slot/fireworks/Salut_00119.png',
-  './assets/slot/fireworks/Salut_00120.png',
-  './assets/slot/fireworks/Salut_00121.png',
-  './assets/slot/fireworks/Salut_00122.png',
-  './assets/slot/fireworks/Salut_00123.png',
-  './assets/slot/fireworks/Salut_00124.png',
-  './assets/slot/fireworks/Salut_00125.png',
-  './assets/slot/fireworks/Salut_00126.png',
-  './assets/slot/fireworks/Salut_00127.png',
-  './assets/slot/fireworks/Salut_00128.png',
-  './assets/slot/fireworks/Salut_00129.png',
-  './assets/slot/fireworks/Salut_00130.png',
-  './assets/slot/fireworks/Salut_00131.png',
-  './assets/slot/fireworks/Salut_00132.png',
-  './assets/slot/fireworks/Salut_00133.png',
-  './assets/slot/fireworks/Salut_00134.png',
-  './assets/slot/fireworks/Salut_00135.png',
-  './assets/slot/fireworks/Salut_00136.png',
-  './assets/slot/fireworks/Salut_00137.png',
-  './assets/slot/fireworks/Salut_00138.png',
-  './assets/slot/fireworks/Salut_00139.png',
-  './assets/slot/fireworks/Salut_00140.png',
-  './assets/slot/fireworks/Salut_00141.png',
-  './assets/slot/fireworks/Salut_00142.png',
-  './assets/slot/fireworks/Salut_00143.png',
-  './assets/slot/fireworks/Salut_00144.png',
-  './assets/slot/fireworks/Salut_00145.png',
-  './assets/slot/fireworks/Salut_00146.png',
-  './assets/slot/fireworks/Salut_00147.png',
-  './assets/slot/fireworks/Salut_00148.png',
-  './assets/slot/fireworks/Salut_00149.png',
-  './assets/slot/fireworks/Salut_00150.png',
-  './assets/slot/fireworks/Salut_00151.png',
-  './assets/slot/fireworks/Salut_00152.png',
-  './assets/slot/fireworks/Salut_00153.png',
-  './assets/slot/fireworks/Salut_00154.png',
-  './assets/slot/fireworks/Salut_00155.png',
-  './assets/slot/fireworks/Salut_00156.png',
-  './assets/slot/fireworks/Salut_00157.png',
-  './assets/slot/fireworks/Salut_00158.png',
-  './assets/slot/fireworks/Salut_00159.png',
-  './assets/slot/fireworks/Salut_00160.png',
-  './assets/slot/fireworks/Salut_00161.png',
-  './assets/slot/fireworks/Salut_00162.png',
-  './assets/slot/fireworks/Salut_00163.png',
-  './assets/slot/fireworks/Salut_00164.png',
-  './assets/slot/fireworks/Salut_00165.png',
-  './assets/slot/fireworks/Salut_00166.png',
-  './assets/slot/fireworks/Salut_00167.png',
-  './assets/slot/fireworks/Salut_00168.png',
-  './assets/slot/fireworks/Salut_00169.png',
-  './assets/slot/fireworks/Salut_00170.png',
-  './assets/slot/fireworks/Salut_00171.png',
-  './assets/slot/fireworks/Salut_00172.png',
-  './assets/slot/fireworks/Salut_00173.png',
-  './assets/slot/fireworks/Salut_00174.png',
-  './assets/slot/fireworks/Salut_00175.png',
-  './assets/slot/fireworks/Salut_00176.png',
-  './assets/slot/fireworks/Salut_00177.png',
-  './assets/slot/fireworks/Salut_00178.png',
-  './assets/slot/fireworks/Salut_00179.png',
-  './assets/slot/fireworks/Salut_00180.png',
-  './assets/slot/fireworks/Salut_00181.png',
-  './assets/slot/fireworks/Salut_00182.png',
-  './assets/slot/fireworks/Salut_00183.png',
-  './assets/slot/fireworks/Salut_00184.png',
-  './assets/slot/fireworks/Salut_00185.png',
-  './assets/slot/fireworks/Salut_00186.png',
-  './assets/slot/fireworks/Salut_00187.png',
-  './assets/slot/fireworks/Salut_00188.png',
-  './assets/slot/fireworks/Salut_00189.png',
-  './assets/slot/fireworks/Salut_00190.png',
-  './assets/slot/fireworks/Salut_00191.png',
-  './assets/slot/fireworks/Salut_00192.png',
-  './assets/slot/fireworks/Salut_00193.png',
-  './assets/slot/fireworks/Salut_00194.png',
-  './assets/slot/fireworks/Salut_00195.png',
-  './assets/slot/fireworks/Salut_00196.png',
-  './assets/slot/fireworks/Salut_00197.png',
-  './assets/slot/fireworks/Salut_00198.png',
-  './assets/slot/fireworks/Salut_00199.png',
-  './assets/slot/fireworks/Salut_00200.png',
-  './assets/slot/fireworks/Salut_00201.png',
-  './assets/slot/fireworks/Salut_00202.png',
-  './assets/slot/fireworks/Salut_00203.png',
-  './assets/slot/fireworks/Salut_00204.png',
-  './assets/slot/fireworks/Salut_00205.png',
-  './assets/slot/fireworks/Salut_00206.png',
-  './assets/slot/fireworks/Salut_00207.png',
-  './assets/slot/fireworks/Salut_00208.png',
-  './assets/slot/fireworks/Salut_00209.png',
-  './assets/slot/fireworks/Salut_00210.png',
-  './assets/slot/fireworks/Salut_00211.png',
-  './assets/slot/fireworks/Salut_00212.png',
-  './assets/slot/fireworks/Salut_00213.png',
-  './assets/slot/fireworks/Salut_00214.png',
-  './assets/slot/fireworks/Salut_00215.png',
-  './assets/slot/fireworks/Salut_00216.png',
-  './assets/slot/fireworks/Salut_00217.png',
-  './assets/slot/fireworks/Salut_00218.png',
-  './assets/slot/fireworks/Salut_00219.png',
-  './assets/slot/fireworks/Salut_00220.png',
-  './assets/slot/fireworks/Salut_00221.png',
-]
+// const fireworksImagesPaths = [
+//   './assets/slot/fireworks/Salut_00005.png',
+//   './assets/slot/fireworks/Salut_00006.png',
+//   './assets/slot/fireworks/Salut_00007.png',
+//   './assets/slot/fireworks/Salut_00008.png',
+//   './assets/slot/fireworks/Salut_00009.png',
+//   './assets/slot/fireworks/Salut_00010.png',
+//   './assets/slot/fireworks/Salut_00011.png',
+//   './assets/slot/fireworks/Salut_00012.png',
+//   './assets/slot/fireworks/Salut_00013.png',
+//   './assets/slot/fireworks/Salut_00014.png',
+//   './assets/slot/fireworks/Salut_00015.png',
+//   './assets/slot/fireworks/Salut_00016.png',
+//   './assets/slot/fireworks/Salut_00017.png',
+//   './assets/slot/fireworks/Salut_00018.png',
+//   './assets/slot/fireworks/Salut_00019.png',
+//   './assets/slot/fireworks/Salut_00020.png',
+//   './assets/slot/fireworks/Salut_00021.png',
+//   './assets/slot/fireworks/Salut_00022.png',
+//   './assets/slot/fireworks/Salut_00023.png',
+//   './assets/slot/fireworks/Salut_00024.png',
+//   './assets/slot/fireworks/Salut_00025.png',
+//   './assets/slot/fireworks/Salut_00026.png',
+//   './assets/slot/fireworks/Salut_00027.png',
+//   './assets/slot/fireworks/Salut_00028.png',
+//   './assets/slot/fireworks/Salut_00029.png',
+//   './assets/slot/fireworks/Salut_00030.png',
+//   './assets/slot/fireworks/Salut_00031.png',
+//   './assets/slot/fireworks/Salut_00032.png',
+//   './assets/slot/fireworks/Salut_00033.png',
+//   './assets/slot/fireworks/Salut_00034.png',
+//   './assets/slot/fireworks/Salut_00035.png',
+//   './assets/slot/fireworks/Salut_00036.png',
+//   './assets/slot/fireworks/Salut_00037.png',
+//   './assets/slot/fireworks/Salut_00038.png',
+//   './assets/slot/fireworks/Salut_00039.png',
+//   './assets/slot/fireworks/Salut_00040.png',
+//   './assets/slot/fireworks/Salut_00041.png',
+//   './assets/slot/fireworks/Salut_00042.png',
+//   './assets/slot/fireworks/Salut_00043.png',
+//   './assets/slot/fireworks/Salut_00044.png',
+//   './assets/slot/fireworks/Salut_00045.png',
+//   './assets/slot/fireworks/Salut_00046.png',
+//   './assets/slot/fireworks/Salut_00047.png',
+//   './assets/slot/fireworks/Salut_00048.png',
+//   './assets/slot/fireworks/Salut_00049.png',
+//   './assets/slot/fireworks/Salut_00050.png',
+//   './assets/slot/fireworks/Salut_00051.png',
+//   './assets/slot/fireworks/Salut_00052.png',
+//   './assets/slot/fireworks/Salut_00053.png',
+//   './assets/slot/fireworks/Salut_00054.png',
+//   './assets/slot/fireworks/Salut_00055.png',
+//   './assets/slot/fireworks/Salut_00056.png',
+//   './assets/slot/fireworks/Salut_00057.png',
+//   './assets/slot/fireworks/Salut_00058.png',
+//   './assets/slot/fireworks/Salut_00059.png',
+//   './assets/slot/fireworks/Salut_00060.png',
+//   './assets/slot/fireworks/Salut_00061.png',
+//   './assets/slot/fireworks/Salut_00062.png',
+//   './assets/slot/fireworks/Salut_00063.png',
+//   './assets/slot/fireworks/Salut_00064.png',
+//   './assets/slot/fireworks/Salut_00065.png',
+//   './assets/slot/fireworks/Salut_00066.png',
+//   './assets/slot/fireworks/Salut_00067.png',
+//   './assets/slot/fireworks/Salut_00068.png',
+//   './assets/slot/fireworks/Salut_00069.png',
+//   './assets/slot/fireworks/Salut_00070.png',
+//   './assets/slot/fireworks/Salut_00071.png',
+//   './assets/slot/fireworks/Salut_00072.png',
+//   './assets/slot/fireworks/Salut_00073.png',
+//   './assets/slot/fireworks/Salut_00074.png',
+//   './assets/slot/fireworks/Salut_00075.png',
+//   './assets/slot/fireworks/Salut_00076.png',
+//   './assets/slot/fireworks/Salut_00077.png',
+//   './assets/slot/fireworks/Salut_00078.png',
+//   './assets/slot/fireworks/Salut_00079.png',
+//   './assets/slot/fireworks/Salut_00080.png',
+//   './assets/slot/fireworks/Salut_00081.png',
+//   './assets/slot/fireworks/Salut_00082.png',
+//   './assets/slot/fireworks/Salut_00083.png',
+//   './assets/slot/fireworks/Salut_00084.png',
+//   './assets/slot/fireworks/Salut_00085.png',
+//   './assets/slot/fireworks/Salut_00086.png',
+//   './assets/slot/fireworks/Salut_00087.png',
+//   './assets/slot/fireworks/Salut_00088.png',
+//   './assets/slot/fireworks/Salut_00089.png',
+//   './assets/slot/fireworks/Salut_00090.png',
+//   './assets/slot/fireworks/Salut_00091.png',
+//   './assets/slot/fireworks/Salut_00092.png',
+//   './assets/slot/fireworks/Salut_00093.png',
+//   './assets/slot/fireworks/Salut_00094.png',
+//   './assets/slot/fireworks/Salut_00095.png',
+//   './assets/slot/fireworks/Salut_00096.png',
+//   './assets/slot/fireworks/Salut_00097.png',
+//   './assets/slot/fireworks/Salut_00098.png',
+//   './assets/slot/fireworks/Salut_00099.png',
+//   './assets/slot/fireworks/Salut_00100.png',
+//   './assets/slot/fireworks/Salut_00101.png',
+//   './assets/slot/fireworks/Salut_00102.png',
+//   './assets/slot/fireworks/Salut_00103.png',
+//   './assets/slot/fireworks/Salut_00104.png',
+//   './assets/slot/fireworks/Salut_00105.png',
+//   './assets/slot/fireworks/Salut_00106.png',
+//   './assets/slot/fireworks/Salut_00107.png',
+//   './assets/slot/fireworks/Salut_00108.png',
+//   './assets/slot/fireworks/Salut_00109.png',
+//   './assets/slot/fireworks/Salut_00110.png',
+//   './assets/slot/fireworks/Salut_00111.png',
+//   './assets/slot/fireworks/Salut_00112.png',
+//   './assets/slot/fireworks/Salut_00113.png',
+//   './assets/slot/fireworks/Salut_00114.png',
+//   './assets/slot/fireworks/Salut_00115.png',
+//   './assets/slot/fireworks/Salut_00116.png',
+//   './assets/slot/fireworks/Salut_00117.png',
+//   './assets/slot/fireworks/Salut_00118.png',
+//   './assets/slot/fireworks/Salut_00119.png',
+//   './assets/slot/fireworks/Salut_00120.png',
+//   './assets/slot/fireworks/Salut_00121.png',
+//   './assets/slot/fireworks/Salut_00122.png',
+//   './assets/slot/fireworks/Salut_00123.png',
+//   './assets/slot/fireworks/Salut_00124.png',
+//   './assets/slot/fireworks/Salut_00125.png',
+//   './assets/slot/fireworks/Salut_00126.png',
+//   './assets/slot/fireworks/Salut_00127.png',
+//   './assets/slot/fireworks/Salut_00128.png',
+//   './assets/slot/fireworks/Salut_00129.png',
+//   './assets/slot/fireworks/Salut_00130.png',
+//   './assets/slot/fireworks/Salut_00131.png',
+//   './assets/slot/fireworks/Salut_00132.png',
+//   './assets/slot/fireworks/Salut_00133.png',
+//   './assets/slot/fireworks/Salut_00134.png',
+//   './assets/slot/fireworks/Salut_00135.png',
+//   './assets/slot/fireworks/Salut_00136.png',
+//   './assets/slot/fireworks/Salut_00137.png',
+//   './assets/slot/fireworks/Salut_00138.png',
+//   './assets/slot/fireworks/Salut_00139.png',
+//   './assets/slot/fireworks/Salut_00140.png',
+//   './assets/slot/fireworks/Salut_00141.png',
+//   './assets/slot/fireworks/Salut_00142.png',
+//   './assets/slot/fireworks/Salut_00143.png',
+//   './assets/slot/fireworks/Salut_00144.png',
+//   './assets/slot/fireworks/Salut_00145.png',
+//   './assets/slot/fireworks/Salut_00146.png',
+//   './assets/slot/fireworks/Salut_00147.png',
+//   './assets/slot/fireworks/Salut_00148.png',
+//   './assets/slot/fireworks/Salut_00149.png',
+//   './assets/slot/fireworks/Salut_00150.png',
+//   './assets/slot/fireworks/Salut_00151.png',
+//   './assets/slot/fireworks/Salut_00152.png',
+//   './assets/slot/fireworks/Salut_00153.png',
+//   './assets/slot/fireworks/Salut_00154.png',
+//   './assets/slot/fireworks/Salut_00155.png',
+//   './assets/slot/fireworks/Salut_00156.png',
+//   './assets/slot/fireworks/Salut_00157.png',
+//   './assets/slot/fireworks/Salut_00158.png',
+//   './assets/slot/fireworks/Salut_00159.png',
+//   './assets/slot/fireworks/Salut_00160.png',
+//   './assets/slot/fireworks/Salut_00161.png',
+//   './assets/slot/fireworks/Salut_00162.png',
+//   './assets/slot/fireworks/Salut_00163.png',
+//   './assets/slot/fireworks/Salut_00164.png',
+//   './assets/slot/fireworks/Salut_00165.png',
+//   './assets/slot/fireworks/Salut_00166.png',
+//   './assets/slot/fireworks/Salut_00167.png',
+//   './assets/slot/fireworks/Salut_00168.png',
+//   './assets/slot/fireworks/Salut_00169.png',
+//   './assets/slot/fireworks/Salut_00170.png',
+//   './assets/slot/fireworks/Salut_00171.png',
+//   './assets/slot/fireworks/Salut_00172.png',
+//   './assets/slot/fireworks/Salut_00173.png',
+//   './assets/slot/fireworks/Salut_00174.png',
+//   './assets/slot/fireworks/Salut_00175.png',
+//   './assets/slot/fireworks/Salut_00176.png',
+//   './assets/slot/fireworks/Salut_00177.png',
+//   './assets/slot/fireworks/Salut_00178.png',
+//   './assets/slot/fireworks/Salut_00179.png',
+//   './assets/slot/fireworks/Salut_00180.png',
+//   './assets/slot/fireworks/Salut_00181.png',
+//   './assets/slot/fireworks/Salut_00182.png',
+//   './assets/slot/fireworks/Salut_00183.png',
+//   './assets/slot/fireworks/Salut_00184.png',
+//   './assets/slot/fireworks/Salut_00185.png',
+//   './assets/slot/fireworks/Salut_00186.png',
+//   './assets/slot/fireworks/Salut_00187.png',
+//   './assets/slot/fireworks/Salut_00188.png',
+//   './assets/slot/fireworks/Salut_00189.png',
+//   './assets/slot/fireworks/Salut_00190.png',
+//   './assets/slot/fireworks/Salut_00191.png',
+//   './assets/slot/fireworks/Salut_00192.png',
+//   './assets/slot/fireworks/Salut_00193.png',
+//   './assets/slot/fireworks/Salut_00194.png',
+//   './assets/slot/fireworks/Salut_00195.png',
+//   './assets/slot/fireworks/Salut_00196.png',
+//   './assets/slot/fireworks/Salut_00197.png',
+//   './assets/slot/fireworks/Salut_00198.png',
+//   './assets/slot/fireworks/Salut_00199.png',
+//   './assets/slot/fireworks/Salut_00200.png',
+//   './assets/slot/fireworks/Salut_00201.png',
+//   './assets/slot/fireworks/Salut_00202.png',
+//   './assets/slot/fireworks/Salut_00203.png',
+//   './assets/slot/fireworks/Salut_00204.png',
+//   './assets/slot/fireworks/Salut_00205.png',
+//   './assets/slot/fireworks/Salut_00206.png',
+//   './assets/slot/fireworks/Salut_00207.png',
+//   './assets/slot/fireworks/Salut_00208.png',
+//   './assets/slot/fireworks/Salut_00209.png',
+//   './assets/slot/fireworks/Salut_00210.png',
+//   './assets/slot/fireworks/Salut_00211.png',
+//   './assets/slot/fireworks/Salut_00212.png',
+//   './assets/slot/fireworks/Salut_00213.png',
+//   './assets/slot/fireworks/Salut_00214.png',
+//   './assets/slot/fireworks/Salut_00215.png',
+//   './assets/slot/fireworks/Salut_00216.png',
+//   './assets/slot/fireworks/Salut_00217.png',
+//   './assets/slot/fireworks/Salut_00218.png',
+//   './assets/slot/fireworks/Salut_00219.png',
+//   './assets/slot/fireworks/Salut_00220.png',
+//   './assets/slot/fireworks/Salut_00221.png',
+// ]
 
 /**
  * Function to start the game
@@ -441,39 +459,38 @@ function start() {
 /**
  * Function to create a button container for the winner
  */
-function crateButtonWinnerContainer() {
-  // Selecting the main container
-  const mainContainer = document.querySelector('.slot-game-wrapper')
-
-  // Creating the button container and appending it to the main container
-  const buttonContainer = createElem('div', 'slot-game-spinner-button-winner-container')
-  mainContainer.appendChild(buttonContainer)
-
-  // Creating the button and appending it to the button container
-  const button = createElem('button', 'slot-game-spinner-button-winner')
-  buttonContainer.appendChild(button)
-
-  // Creating the image for the button and appending it to the button
-  const imgButton = createElem('img')
-  imgButton.src = 'assets/button/button.png'
-  button.appendChild(imgButton)
-
-  // Adding an event listener to the button to restart the game when clicked
-  button.addEventListener("click", restartGame);
-}
+// function crateButtonWinnerContainer() {
+//   // Selecting the main container
+//   const mainContainer = document.querySelector('.slot-game-wrapper')
+//
+//   // Creating the button container and appending it to the main container
+//   const buttonContainer = createElem('div', 'slot-game-spinner-button-winner-container')
+//   mainContainer.appendChild(buttonContainer)
+//
+//   // Creating the button and appending it to the button container
+//   const button = createElem('button', 'slot-game-spinner-button-winner')
+//   buttonContainer.appendChild(button)
+//
+//   // Creating the image for the button and appending it to the button
+//   const imgButton = createElem('img')
+//   imgButton.src = 'assets/button/button.png'
+//   button.appendChild(imgButton)
+//
+//   // Adding an event listener to the button to restart the game when clicked
+//   button.addEventListener("click", restartGame);
+// }
 
 /**
  * Function to restart the game
  */
 function restartGame() {
   // Resetting the opacity of the flag and fireworks
-  flag.style.opacity = 0
-  fireworks.style.opacity = 0
-  userName.style.opacity = 0
+  flag.style.opacity = '0'
+  // fireworks.style.opacity = 0
+  userName.style.opacity = '0'
   setUserName()
 
   // Removing the button container and the column container
-  document.querySelector('.slot-game-spinner-button-winner-container').remove()
   document.querySelector('.slot-game-machine-column-container').remove()
 
   // Drawing the contents of the game
@@ -600,81 +617,69 @@ function animateSpinner(spinnerImage) {
 }
 
 
-let flagAnimationId;
-let fireworksAnimationId;
+// let flagAnimationId;
+// let fireworksAnimationId;
 
-const silverFlagImages = [];
-silverFlagImagesPaths.forEach((path) => {
-  const img = new Image();
-  img.src = path;
-  silverFlagImages.push(img);
-});
+function loadImages(paths) {
+  return paths.map(path => {
+    const img = new Image();
+    img.src = path;
+    return img;
+  })
+}
 
-const bronzeFlagImages = [];
-bronzeFlagImagesPaths.forEach((path) => {
-  const img = new Image();
-  img.src = path;
-  bronzeFlagImages.push(img);
-})
+const silverFlagImages = loadImages(silverFlagImagesPaths);
+const bronzeFlagImages = loadImages(bronzeFlagImagesPaths);
+const goldFlagImages = loadImages(goldFlagImagesPaths);
 
-const goldFlagImages = [];
-goldFlagImagesPaths.forEach((path) => {
-  const img = new Image();
-  img.src = path;
-  goldFlagImages.push(img);
-})
-
-
-/**
- * Function to animate the flag
- */
 function animateFlag(flagImages) {
   let index = 0;
-
-  function animate() {
+  const animate = () => {
     flag.style.pointerEvents = "none";
     flag.src = flagImages[index].src;
     index = (index + 1) % flagImages.length;
-    requestAnimationFrame(animate);
+    flagAnimationId = requestAnimationFrame(animate);
   }
+  cancelAnimationFrame(flagAnimationId);
 
-  requestAnimationFrame(animate);
+  animate();
 }
 
 /**
  * Function to animate the fireworks
  */
-const fireworksImages = [];
-fireworksImagesPaths.forEach((path) => {
-  const img = new Image();
-  img.src = path;
-  fireworksImages.push(img);
-});
+// const fireworksImages = [];
+//   fireworksImagesPaths.forEach((path) => {
+//
+//     const img = new Image();
+//     img.src = path;
+//     fireworksImages.push(img);
+//   });
 
 /**
  * Function to stop the flag animation
  */
-function animateFireworks() {
-  let index = 0;
+// function animateFireworks() {
+//   let index = 0;
+//
+//   function animate() {
+//     fireworks.style.pointerEvents = "none";
+//     fireworks.src = fireworksImages[index].src;
+//     index = (index + 1) % fireworksImages.length;
+//     requestAnimationFrame(animate);
+//   }
+//
+//   requestAnimationFrame(animate);
+// }
 
-  function animate() {
-    fireworks.style.pointerEvents = "none";
-    fireworks.src = fireworksImages[index].src;
-    index = (index + 1) % fireworksImages.length;
-    requestAnimationFrame(animate);
-  }
 
-  requestAnimationFrame(animate);
-}
+// function stopFlagAnimation() {
+//   cancelAnimationFrame(flagAnimationId);
+// }
 
-
-function stopFlagAnimation() {
-  cancelAnimationFrame(flagAnimationId);
-}
-
-function stopFireworksAnimation() {
-  cancelAnimationFrame(fireworksAnimationId);
-}
+// function stopFireworksAnimation() {
+  // cancelAnimationFrame(fireworksAnimationId);
+// }
 
 /**
  * Function to declare the winner
@@ -689,127 +694,305 @@ function winner() {
   }
 
   spinCount--;
-  animateFireworks()
+
+  setTimeout(() => {
+    // stopFlagAnimation()
+    // stopFireworksAnimation()
+    restartGame()
+
+  }, 4000)
+}
+
+
+function updateAnim1(anim) {
+  let loops1 = 0;
+  let loops2 = 2;
+  if (anim.progress >= 40) {
+    clearAnimTimeouts()
+    document
+      .querySelectorAll(".slot-game-machine-column1")
+      .forEach((el) => {
+        anime.remove(el);
+      });
+    anime({
+      targets: ".even",
+      top: [
+        {value: "0px", duration: 0, delay: 0},
+        {value: "-2200px", duration: 500, delay: 0},
+      ],
+      easing: "linear",
+      loop: true,
+      loopComplete: function () {
+        loops1++;
+      },
+    })
+    anime({
+      targets: ".odd",
+      top: [
+        {value: "0px", duration: 0, delay: 0},
+        {value: "2200px", duration: 500, delay: 0},
+      ],
+      easing: "linear",
+      loop: true,
+      loopComplete: function () {
+        loops1++;
+      },
+      update: function () {
+        if (winCondition && loops1 === 6) {
+          document
+            .querySelectorAll(".slot-game-machine-column1")
+            .forEach((el) => {
+              anime.remove(el);
+            });
+          document
+            .querySelectorAll(".slot-game-machine-column1")
+            .forEach((el) => {
+              el.remove();
+            });
+
+          const numColumns = 12;
+          const numRows = 60;
+
+          const columnContainer = document.querySelector(
+            ".slot-game-machine-column-container"
+          );
+
+          const columnContainer2 = createElem(
+            "div",
+            `slot-game-machine-column-container2`
+          );
+
+          for (let i = 0; i < numColumns; i++) {
+            loops2++;
+            const column2 = createElem("div", `slot-game-machine-column2`);
+            for (let j = 0; j < numRows; j++) {
+              const char =
+                characters[Math.floor(Math.random() * characters.length)];
+              const row = createElem(
+                "h2",
+                `slot-game-machine-row number-${j}`,
+                char
+              );
+              column2.appendChild(row);
+            }
+
+            columnContainer2.appendChild(column2);
+          }
+          columnContainer.appendChild(columnContainer2);
+
+          let val = 0;
+
+          document.querySelectorAll(".number-40").forEach((el, index) => {
+            el.textContent = winCondition[index];
+          });
+
+          let update = 0
+          const row36 = document.querySelectorAll(".number-40");
+          row36.forEach((el) => {
+            el.style.color = 'black'
+          })
+
+          document
+            .querySelectorAll(".slot-game-machine-column2")
+            .forEach((el) => {
+              anime({
+                targets: el,
+                top: `${2030}px`,
+                duration: 700 + val,
+                easing: "easeOutBack",
+                update: function (anim) {
+                  if (anim.progress >= 90 && update === 0) {
+                    update = 1
+                    flag.style.opacity = 1
+                    // fireworks.style.opacity = 1
+                    // crateButtonWinnerContainer()
+                    setUserName(email)
+                    userName.style.opacity = 1
+                    winner()
+                  }
+                },
+              });
+              val += 70;
+            });
+        }
+      },
+    });
+  }
 }
 
 /**
  * Function to spin the slot machine
  */
+
+function spin1(target, func) {
+  anime({
+    targets: target,
+    top: "-13650px",
+    easing: "easeInQuad",
+    duration: 4000,
+    update: function (anim) {
+      if (func) {
+        func(anim)
+      }
+    }
+  });
+}
+
+function spin2(target) {
+  anime({
+    targets: target,
+    top: "13650px",
+    easing: "easeInQuad",
+    duration: 4000,
+  });
+}
+
 function spin() {
   if (spinCount === 0) return
 
-  let loops1 = 0;
-  let loops2 = 2;
 
-  anime({
-    targets: ".slot-game-machine-column1",
-    top: "13650px",
-    easing: "easeInQuad",
-    delay: anime.stagger(25),
-    duration: 5000,
-    update: function (anim) {
-      if (anim.progress >= 40) {
-        document
-          .querySelectorAll(".slot-game-machine-column1")
-          .forEach((el) => {
-            anime.remove(el);
-          });
-        anime({
-          targets: ".slot-game-machine-column1",
-          top: [
-            {value: "0px", duration: 0, delay: 0},
-            {value: "2200px", duration: 1000, delay: 0},
-          ],
-          easing: "linear",
-          loop: true,
-          loopComplete: function (param) {
-            loops1++;
-          },
-          update: function (anim) {
-            if (winCondition && loops1 === 2) {
-              document
-                .querySelectorAll(".slot-game-machine-column1")
-                .forEach((el) => {
-                  anime.remove(el);
-                });
-              document
-                .querySelectorAll(".slot-game-machine-column1")
-                .forEach((el) => {
-                  el.remove();
-                });
+  let columns = document.getElementsByClassName("slot-game-machine-column1")
 
-              const numColumns = 12;
-              const numRows = 60;
+  if (columns.length === 0) return
 
-              const columnContainer = document.querySelector(
-                ".slot-game-machine-column-container"
-              );
+  for (let i = 0; i <= columns.length - 1; i++) {
 
-              const columnContainer2 = createElem(
-                "div",
-                `slot-game-machine-column-container2`
-              );
+    if (i === 0) {
+      columns[i].classList.add('even')
+      anim1Time1 = setTimeout(() => {
+        spin1(columns[i], updateAnim1)
+      }, del)
+      del -= 100
+    }
 
-              for (let i = 0; i < numColumns; i++) {
-                loops2++;
-                const column2 = createElem("div", `slot-game-machine-column2`);
-                for (let j = 0; j < numRows; j++) {
-                  const char =
-                    characters[Math.floor(Math.random() * characters.length)];
-                  const row = createElem(
-                    "h2",
-                    `slot-game-machine-row number-${j}`,
-                    char
-                  );
-                  column2.appendChild(row);
-                }
+    if (i % 2 === 0 && i !== 0) {
+      columns[i].classList.add('even')
+      anim1Time2 = setTimeout(() => {
+        spin1(columns[i])
+      }, del)
+    }
+    del -= 100;
 
-                columnContainer2.appendChild(column2);
-              }
-              columnContainer.appendChild(columnContainer2);
-
-              let val = 0;
-
-              document.querySelectorAll(".number-36").forEach((el, index) => {
-                el.textContent = winCondition[index];
-              });
-
-              let update = 0
-              const row36 = document.querySelectorAll(".number-36");
-              row36.forEach((el) => {
-                el.style.color = 'black'
-              })
-
-              document
-                .querySelectorAll(".slot-game-machine-column2")
-                .forEach((el, i) => {
-                  anime({
-                    targets: el,
-                    top: `${2500}px`,
-                    duration: 2500 + val,
-                    easing: "easeOutQuart",
-                    update: function (anim) {
-                      if (anim.progress >= 90 && update === 0) {
-                        update = 1
-                        flag.style.opacity = 1
-                        fireworks.style.opacity = 1
-                        crateButtonWinnerContainer()
-                        setUserName(email)
-                        userName.style.opacity = 1
-                        const winnerButton = document.querySelector(".slot-game-spinner-button-winner-container");
-                        winnerButton.style.opacity = 1
-                        winner()
-                      }
-                    },
-                  });
-                  val += 25;
-                });
-            }
-          },
-        });
-      }
-    },
-  });
+    if (i % 2 !== 0) {
+      columns[i].classList.add('odd')
+      anim1Time3 = setTimeout(() => {
+        spin2(columns[i])
+      }, del)
+    }
+  }
+  // anime({
+  //   targets: ".slot-game-machine-column1",
+  //   top: "13650px",
+  //   easing: "easeInQuad",
+  //   direction: 'reverse',
+  //   delay: anime.stagger(25),
+  //   duration: 5000,
+  //   begin: function (anim) {
+  //     // anime({
+  //     //   targets: "columns",
+  //     // })
+  //   },
+  // update: function (anim) {
+  //   if (anim.progress >= 40) {
+  //     document
+  //       .querySelectorAll(".slot-game-machine-column1")
+  //       .forEach((el) => {
+  //         anime.remove(el);
+  //       });
+  //     anime({
+  //       targets: ".slot-game-machine-column1",
+  //       top: [
+  //         {value: "0px", duration: 0, delay: 0},
+  //         {value: "2200px", duration: 1000, delay: 0},
+  //       ],
+  //       easing: "linear",
+  //       loop: true,
+  //       loopComplete: function (param) {
+  //         loops1++;
+  //       },
+  //       update: function (anim) {
+  //         if (winCondition && loops1 === 2) {
+  //           document
+  //             .querySelectorAll(".slot-game-machine-column1")
+  //             .forEach((el) => {
+  //               anime.remove(el);
+  //             });
+  //           document
+  //             .querySelectorAll(".slot-game-machine-column1")
+  //             .forEach((el) => {
+  //               el.remove();
+  //             });
+  //
+  //           const numColumns = 12;
+  //           const numRows = 60;
+  //
+  //           const columnContainer = document.querySelector(
+  //             ".slot-game-machine-column-container"
+  //           );
+  //
+  //           const columnContainer2 = createElem(
+  //             "div",
+  //             `slot-game-machine-column-container2`
+  //           );
+  //
+  //           for (let i = 0; i < numColumns; i++) {
+  //             loops2++;
+  //             const column2 = createElem("div", `slot-game-machine-column2`);
+  //             for (let j = 0; j < numRows; j++) {
+  //               const char =
+  //                 characters[Math.floor(Math.random() * characters.length)];
+  //               const row = createElem(
+  //                 "h2",
+  //                 `slot-game-machine-row number-${j}`,
+  //                 char
+  //               );
+  //               column2.appendChild(row);
+  //             }
+  //
+  //             columnContainer2.appendChild(column2);
+  //           }
+  //           columnContainer.appendChild(columnContainer2);
+  //
+  //           let val = 0;
+  //
+  //           document.querySelectorAll(".number-36").forEach((el, index) => {
+  //             el.textContent = winCondition[index];
+  //           });
+  //
+  //           let update = 0
+  //           const row36 = document.querySelectorAll(".number-36");
+  //           row36.forEach((el) => {
+  //             el.style.color = 'black'
+  //           })
+  //
+  //           document
+  //             .querySelectorAll(".slot-game-machine-column2")
+  //             .forEach((el, i) => {
+  //               anime({
+  //                 targets: el,
+  //                 top: `${2500}px`,
+  //                 duration: 2500 + val,
+  //                 easing: "easeOutQuart",
+  //                 update: function (anim) {
+  //                   if (anim.progress >= 90 && update === 0) {
+  //                     update = 1
+  //                     flag.style.opacity = 1
+  //                     // fireworks.style.opacity = 1
+  //                     // crateButtonWinnerContainer()
+  //                     setUserName(email)
+  //                     userName.style.opacity = 1
+  //                     winner()
+  //                   }
+  //                 },
+  //               });
+  //               val += 25;
+  //             });
+  //         }
+  //       },
+  //     });
+  //   }
+  // },
+  // });
 }
 
 // Function to create the spinner
@@ -823,6 +1006,8 @@ createSpinner();
  * 3. Adds an event listener to the volume button to mute/unmute the video when clicked
  */
 function runGame() {
+
+  victoryPosition()
   setUserName()
   // Draw the initial contents of the game
   drawContents();
