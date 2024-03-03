@@ -75,6 +75,7 @@ function clearAnimTimeouts() {
   clearTimeout(restartId)
   del = 1200
 }
+
 //TEMP end
 
 /**
@@ -297,7 +298,7 @@ let count = 0;
 function drawContents() {
   const numColumns = 12;
   const numRows = 120;
-  const START_TEXT = [' ', ' ','L', 'M', 'C', 'T', ' ', 'P', 'L', 'U', 'S', ' ' ];
+  const START_TEXT = [' ', ' ', 'L', 'M', 'C', 'T', ' ', 'P', 'L', 'U', 'S', ' '];
   count++;
 
   const container = document.getElementById("slotGameMachineContainer");
@@ -456,7 +457,7 @@ function winner() {
 
   restartId = setTimeout(() => {
     restartGame()
-  }, 4000)
+  }, 7000)
 }
 
 /**
@@ -564,7 +565,7 @@ function updateAnim1(anim) {
                 targets: el,
                 top: `${2030}px`,
                 duration: 700 + val,
-                easing: "easeOutBack",
+                easing: "cubicBezier(0.140, 0.435, 0.780, 1.385)",
                 update: function (anim) {
                   if (anim.progress >= 90 && update === 0) {
                     update = 1
@@ -575,7 +576,7 @@ function updateAnim1(anim) {
                   }
                 },
               });
-              val += 70;
+              val += 100;
             });
         }
       },
@@ -664,7 +665,6 @@ createSpinner();
  * This function sets up the initial state of the game, draws the contents of the slot machine, and adds event listeners for the start button and the volume button.
  */
 function runGame() {
-
   victoryPosition()
   setUserName()
   drawContents();
@@ -677,8 +677,7 @@ function runGame() {
     if (video.muted) {
       video.muted = false;
       volumeIcon.src = "assets/icons/volumeOn.svg";
-    }
-    else {
+    } else {
       video.muted = true;
       volumeIcon.src = "assets/icons/volumeOff.svg";
     }
