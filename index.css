@@ -286,6 +286,7 @@
 }
 
 .slot-game-machine-row {
+  white-space: pre;
   font-family: Springwood;
   font-size: 123px;
   font-weight: 400;
