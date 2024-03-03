@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="Added new clean code, without fireworks">
-      <change afterPath="$PROJECT_DIR$/Slot.zip" afterDir="false" />
+    <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="Added new easing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00005.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00006.png" beforeDir="false" />
@@ -312,7 +311,7 @@
       <workItem from="1709149289602" duration="2790000" />
       <workItem from="1709287833031" duration="24193000" />
       <workItem from="1709366926944" duration="7661000" />
-      <workItem from="1709386981735" duration="26045000" />
+      <workItem from="1709386981735" duration="26725000" />
     </task>
     <task id="LOCAL-00001" summary="add fireworks 5-58">
       <option name="closed" value="true" />
@@ -442,7 +441,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709449809317</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added new easing">
+      <option name="closed" value="true" />
+      <created>1709509650070</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1709509650070</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,6 +473,7 @@
     <MESSAGE value="set user email and transition for email" />
     <MESSAGE value="add ed for remember" />
     <MESSAGE value="Added new clean code, without fireworks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new clean code, without fireworks" />
+    <MESSAGE value="Added new easing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new easing" />
   </component>
 </project>
