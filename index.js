@@ -1,8 +1,20 @@
 /**
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ * FIND PLACEHOLDER COMMENTS AND REPLACE THEM WITH THE NECESSARY CODE.
+ */
+
+/**
  * This JavaScript file is for a slot game. It includes the logic for the game's animations,
  * the game's state, and the game's interactions.
  */
-
 // Get DOM elements
 const volumeButton = document.getElementById("slotGameVideoVolumeControlButton");
 const volumeIcon = document.getElementById("slotGameVideoVolumeControl");
@@ -16,12 +28,6 @@ const userName = document.querySelector(".slot-game-machine-user-email-text");
 const blueText1 = document.querySelector(".slot-game-machine-prize-text2");
 const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
-
-// Create a new HTML element
-// const BGsource = createElem("source", 'bgVideo');
-// BGsource.src = "assets/BG.mp4";
-// BGsource.type = "video/mp4";
-// bgVideo.appendChild(BGsource);
 
 const frontVideo = createElem("source", 'frontVideo');
 frontVideo.id = "slotGameVideoSource";
@@ -39,7 +45,7 @@ let email = ""
  * Function to set the user's name
  * @param {string} email - The user's email
  */
-function setUserName(email = "") { //PLACEHOLDER
+function setUserName(email = "") {
   userName.textContent = email
 }
 
@@ -50,12 +56,14 @@ function victoryPosition() {
   if (spinCount === 0) return;
 
   const prizeText = ["1ST", "2ND", "3RD"];
-  blueText1.textContent = `${prizeText[spinCount - 1]} PRIZE!`; //PLACEHOLDER
+  blueText1.textContent = `${prizeText[spinCount - 1]} PRIZE!`;
 }
 
+function setPrize(prizes) {
+  prize.textContent = `$${prizes}`;
+}
 
 blueText2.textContent = "CREDIT"; //PLACEHOLDER
-prize.textContent = "$2500"; //PLACEHOLDER
 
 
 //TEMP start
@@ -270,6 +278,7 @@ function restartGame() {
   startSpinner.addEventListener("click", start);
 
   victoryPosition()
+  setPrize(2300) // NEXT PLACEHOLDER
 }
 
 /**
@@ -665,9 +674,11 @@ createSpinner();
  * This function sets up the initial state of the game, draws the contents of the slot machine, and adds event listeners for the start button and the volume button.
  */
 function runGame() {
+  console.log(1)
   victoryPosition()
   setUserName()
   drawContents();
+  setPrize(2000) //FIRST PLACEHOLDER
 
   const startSpinner = document.getElementById("startSpinner");
 
