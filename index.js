@@ -18,10 +18,10 @@ const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
 
 // Create a new HTML element
-const BGsource = createElem("source", 'bgVideo');
-BGsource.src = "assets/BG.mp4";
-BGsource.type = "video/mp4";
-bgVideo.appendChild(BGsource);
+// const BGsource = createElem("source", 'bgVideo');
+// BGsource.src = "assets/BG.mp4";
+// BGsource.type = "video/mp4";
+// bgVideo.appendChild(BGsource);
 
 const frontVideo = createElem("source", 'frontVideo');
 frontVideo.id = "slotGameVideoSource";

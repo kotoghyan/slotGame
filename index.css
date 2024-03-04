@@ -15,17 +15,95 @@
 }
 
 .slot-game-wrapper {
+  overflow: hidden;
+  position: absolute;
   width: 1920px;
   height: 1080px;
-  /*background: url(./assets/Background.png);*/
+  background: radial-gradient(59.09% 63.29% at 49.38% 46.81%, #9565AD 0%, #623E75 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  /*background: radial-gradient(59.09% 63.29% at 49.38% 46.81%, #44D6FC 0%, #007BBF 100%) !* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected *!;*/
+  z-index: -5;
+}
+
+.slot-game-bg-first-effects {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: radial-gradient(59.09% 63.29% at 49.38% 46.81%, #44D6FC 0%, #007BBF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  z-index: -4;
 }
 
 .slot-game-bg-effects {
   width: 1920px;
   height: 1080px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   pointer-events: none;
   position: absolute;
-  z-index: -1;
+  z-index: -3;
+}
+
+.slot-game-bg-second-effects {
+  position: absolute;
+  width: 1930.98px;
+  height: 741.6px;
+  top: 348.53px;
+  left: 0.02px;
+  opacity: 56.64%;
+  background: linear-gradient(0deg, #5A2CA0 -45.4%, rgba(68, 22, 80, 0) 76.64%);
+  z-index: -2;
+}
+
+.slot-game-bg-third-effects {
+  position: absolute;
+  width: 1930.97px;
+  height: 741.58px;
+  top: 348.53px;
+  left: 0.03px;
+  opacity: 0.15;
+  background: linear-gradient(0deg, rgba(43, 0, 176, 0.292035) 5.55%, rgba(206, 0, 233, 0) 98.68%);
+}
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  width: 4000px;
+  height: 4000px;
+
+  -webkit-animation: rotating 30s linear infinite;
+  -moz-animation: rotating 30s linear infinite;
+  -ms-animation: rotating 30s linear infinite;
+  -o-animation: rotating 30s linear infinite;
+  animation: rotating 30s linear infinite;
 }
 
 .slot-game-flag {

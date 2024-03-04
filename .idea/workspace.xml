@@ -5,224 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1675a0f-22ea-4d61-9b8f-8fc2de0fc5ae" name="Changes" comment="Added new easing">
+      <change afterPath="$PROJECT_DIR$/assets/bgShine.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00005.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00006.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00008.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00009.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00010.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00012.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00013.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00014.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00015.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00016.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00017.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00018.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00020.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00021.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00022.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00023.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00024.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00025.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00026.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00027.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00028.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00029.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00030.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00031.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00032.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00033.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00034.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00035.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00036.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00037.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00038.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00039.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00040.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00041.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00042.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00043.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00044.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00045.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00046.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00047.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00048.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00049.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00050.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00051.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00052.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00053.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00054.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00055.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00056.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00057.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00058.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00059.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00060.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00061.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00062.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00063.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00064.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00065.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00066.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00067.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00068.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00069.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00070.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00071.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00072.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00073.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00074.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00075.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00076.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00077.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00078.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00079.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00080.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00081.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00082.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00083.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00084.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00085.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00086.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00087.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00088.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00089.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00090.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00091.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00092.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00093.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00094.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00095.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00096.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00097.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00098.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00099.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00101.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00103.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00104.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00105.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00106.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00107.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00108.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00109.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00110.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00111.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00112.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00113.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00114.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00115.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00116.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00117.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00118.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00119.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00121.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00122.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00123.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00124.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00125.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00126.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00127.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00129.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00130.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00131.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00132.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00133.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00134.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00135.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00136.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00137.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00138.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00139.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00140.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00141.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00142.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00143.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00145.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00146.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00147.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00148.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00149.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00150.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00151.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00153.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00154.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00155.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00156.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00157.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00158.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00159.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00160.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00161.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00162.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00163.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00164.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00165.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00166.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00167.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00168.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00169.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00170.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00171.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00172.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00173.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00174.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00175.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00176.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00177.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00178.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00179.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00181.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00182.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00183.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00184.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00185.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00186.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00187.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00188.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00189.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00190.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00191.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00193.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00194.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00195.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00196.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00197.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00198.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00199.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00201.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00202.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00203.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00204.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00205.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00206.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00207.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00208.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00209.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00210.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00211.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00212.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00213.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00214.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00215.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00216.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00217.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00218.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00219.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00220.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/slot/fireworks/Salut_00221.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +54,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/var/www/html/SlotGame",
+    "last_opened_file_path": "/var/www/html/SlotGameGit/assets/tv",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -281,6 +67,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/tv" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/assets/slot" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -311,7 +101,7 @@
       <workItem from="1709149289602" duration="2790000" />
       <workItem from="1709287833031" duration="24193000" />
       <workItem from="1709366926944" duration="7661000" />
-      <workItem from="1709386981735" duration="26725000" />
+      <workItem from="1709386981735" duration="33921000" />
     </task>
     <task id="LOCAL-00001" summary="add fireworks 5-58">
       <option name="closed" value="true" />
@@ -449,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709509650070</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added new easing">
+      <option name="closed" value="true" />
+      <created>1709509826249</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1709509826249</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
