@@ -5,38 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slot Machine Game</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js" integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.js"
+            integrity="sha512-FSNQjUUq97PtDnAJyMlBTH8EhV4o5X5FLVbzS9ttrdEVVbmrssJBh/PgXFQbxS+6yYx5n5irOj7de6Th0TRQZA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+            integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-    <div class="slot-game-wrapper">
-        <div class="slot-game-bg-first-effects"></div>
-        <div class="slot-game-bg-effects" >
-            <img src="assets/bgShine.svg" alt="shine" class="rotating" />
+<div class="slot-game-wrapper">
+    <div class="slot-game-bg-first-effects"></div>
+    <div id="container">
+    </div>
+    <div id="fireworksId">
+        <div>
+            <lottie-player src="assets/animation.json" background="transparent" speed="1"
+                           style="width:2000px; height: 2000px;" loop autoplay>
+            </lottie-player>
         </div>
-        <div class="slot-game-bg-second-effects"></div>
-        <div class="slot-game-bg-third-effects"></div>
-<!--        <video class="slot-game-bg-effects" id="slotGameVideoBg" autoplay muted loop>-->
-<!--        </video>-->
-        <img src="assets/slot/flag/Flag_00080.png" alt="flag" class="slot-game-flag" />
-        <div class="slot-game-container">
-            <img src="./assets/Logo.png" alt="LMCT+" class="slot-game-logo" />
-            <div class="slot-game-video-wrapper">
-                <div class="slot-game-video-container">
-                    <div class="slot-game-video-mute-button"
-                         id="slotGameVideoVolumeControlButton">
-                        <img src="assets/icons/volumeOff.svg"
-                             id="slotGameVideoVolumeControl"
-                             alt="volume control"
-                             class="slot-game-video-mute" />
-                    </div>
-                    <video class="slot-game-video" id="slotGameVideo" autoplay muted>
-                    </video>
+        <div style="position: absolute; top: -500px; left: -500px">
+            <lottie-player src="assets/animation.json" background="transparent" speed="1"
+                           style="width:2000px; height: 2000px;" loop autoplay>
+            </lottie-player>
+        </div>
+        <div style="position: absolute; top: -500px; left: 500px">
+            <lottie-player src="assets/animation.json" background="transparent" speed="1"
+                           style="width:2000px; height: 2000px;" loop autoplay>
+            </lottie-player>
+        </div>
+    </div>
+    <div class="slot-game-bg-effects">
+        <img src="assets/bgShine.svg" alt="shine" class="rotating"/>
+    </div>
+    <div class="slot-game-bg-second-effects"></div>
+    <div class="slot-game-bg-third-effects"></div>
+    <!--        <video class="slot-game-bg-effects" id="slotGameVideoBg" autoplay muted loop>-->
+    <!--        </video>-->
+    <img src="assets/slot/flag/Flag_00080.png" alt="flag" class="slot-game-flag"/>
+    <div class="slot-game-container">
+        <img src="./assets/Logo.png" alt="LMCT+" class="slot-game-logo"/>
+        <div class="slot-game-video-wrapper">
+            <div class="slot-game-video-container">
+                <div class="slot-game-video-mute-button"
+                     id="slotGameVideoVolumeControlButton">
+                    <img src="assets/icons/volumeOff.svg"
+                         id="slotGameVideoVolumeControl"
+                         alt="volume control"
+                         class="slot-game-video-mute"/>
                 </div>
+                <video class="slot-game-video" id="slotGameVideo" autoplay muted>
+                </video>
             </div>
-            <div class="slot-game-machine-wrapper">
-                <div class="slot-game-machine-prize-text1 marquee">
-                    <div>
+        </div>
+        <div class="slot-game-machine-wrapper">
+            <div class="slot-game-machine-prize-text1 marquee">
+                <div>
                     <span class="slot-game-machine-prize-text2">
                     2ND PRIZE
                     </span>
@@ -47,19 +71,19 @@
                     CREDIT
                     </span>
                 </div>
-                </div>
-                <h2 class="slot-game-machine-user-email-text">jackson.smit*********j@gmail.com</h2>
             </div>
-            <div class="slot-game-machine-wrapper-container">
-                <div class="slot-game-machine-container" id="slotGameMachineContainer">
-                </div>
+            <h2 class="slot-game-machine-user-email-text">jackson.smit*********j@gmail.com</h2>
+        </div>
+        <div class="slot-game-machine-wrapper-container">
+            <div class="slot-game-machine-container" id="slotGameMachineContainer">
             </div>
-            <div class="slot-game-machine-container-shadow-top"></div>
-            <div class="slot-game-machine-container-shadow-bottom"></div>
         </div>
-        <div class="slot-game-spinner-wrapper" id="slotGameMachineSpinnerContainer">
-        </div>
+        <div class="slot-game-machine-container-shadow-top"></div>
+        <div class="slot-game-machine-container-shadow-bottom"></div>
     </div>
+    <div class="slot-game-spinner-wrapper" id="slotGameMachineSpinnerContainer">
+    </div>
+</div>
 <script src="index.js"></script>
 </body>
 </html>

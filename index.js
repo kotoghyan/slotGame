@@ -21,6 +21,7 @@ const volumeIcon = document.getElementById("slotGameVideoVolumeControl");
 const flag = document.querySelector(".slot-game-flag");
 const video = document.getElementById("slotGameVideo");
 const bgVideo = document.getElementById("slotGameVideoBg");
+const firework = document.getElementById("fireworksId");
 
 let flagAnimationId;
 
@@ -28,6 +29,15 @@ const userName = document.querySelector(".slot-game-machine-user-email-text");
 const blueText1 = document.querySelector(".slot-game-machine-prize-text2");
 const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
+// Create an audio element
+const audio = new Audio('./assets/fireworks.mp3');
+
+audio.loop = true;
+
+
+
+
+
 
 const frontVideo = createElem("source", 'frontVideo');
 frontVideo.id = "slotGameVideoSource";
@@ -67,10 +77,17 @@ blueText2.textContent = "CREDIT"; //PLACEHOLDER
 
 
 //TEMP start
+let callBeckToStartText1Time = true
+let callResetGame1Time = true
 let anim1Time1
 let anim1Time2
 let anim1Time3
+let anim1Time4
+let anim1Time5
+let anim1Time6
+let soundTimeOutId
 let restartId
+let restartGameId
 let del = 1200
 
 /**
@@ -80,12 +97,17 @@ function clearAnimTimeouts() {
   clearTimeout(anim1Time1)
   clearTimeout(anim1Time2)
   clearTimeout(anim1Time3)
+  clearTimeout(anim1Time4)
+  clearTimeout(anim1Time5)
+  clearTimeout(anim1Time6)
   clearTimeout(restartId)
+  callBeckToStartText1Time = true
+  callResetGame1Time = true
   del = 1200
 }
 
 //TEMP end
-
+const START_TEXT = [' ', ' ', 'L', 'M', 'C', 'T', ' ', 'P', 'L', 'U', 'S', ' '];
 /**
  * Function to fetch data
  * @returns {Promise} - A promise that resolves with the winner and email
@@ -266,8 +288,14 @@ function start() {
  * Function to restart the game
  */
 function restartGame() {
+  clearTimeout(restartGameId)
   flag.style.opacity = '0'
   userName.style.opacity = '0'
+  firework.style.opacity = '0'
+  audio.pause()
+  audio.currentTime = 0
+
+  clearTimeout(soundTimeOutId)
   setUserName()
 
   document.querySelector('.slot-game-machine-column-container').remove()
@@ -278,7 +306,7 @@ function restartGame() {
   startSpinner.addEventListener("click", start);
 
   victoryPosition()
-  setPrize(2300) // NEXT PLACEHOLDER
+  setPrize(2300) // NEXT TWO PLACEHOLDER
 }
 
 /**
@@ -307,7 +335,6 @@ let count = 0;
 function drawContents() {
   const numColumns = 12;
   const numRows = 120;
-  const START_TEXT = [' ', ' ', 'L', 'M', 'C', 'T', ' ', 'P', 'L', 'U', 'S', ' '];
   count++;
 
   const container = document.getElementById("slotGameMachineContainer");
@@ -464,9 +491,13 @@ function winner() {
 
   spinCount--;
 
+  soundTimeOutId = setTimeout(() => {
+    audio.play()
+  }, 500);
+
   restartId = setTimeout(() => {
-    restartGame()
-  }, 7000)
+    resetAnimGoToStart()
+  }, 5000)
 }
 
 /**
@@ -513,6 +544,7 @@ function updateAnim1(anim) {
       },
       update: function () {
         if (winCondition && loops1 === 6) {
+          del = 1200
           document
             .querySelectorAll(".slot-game-machine-column1")
             .forEach((el) => {
@@ -577,11 +609,17 @@ function updateAnim1(anim) {
                 easing: "cubicBezier(0.140, 0.435, 0.780, 1.385)",
                 update: function (anim) {
                   if (anim.progress >= 90 && update === 0) {
-                    update = 1
-                    flag.style.opacity = 1
-                    setUserName(email)
-                    userName.style.opacity = 1
-                    winner()
+                    setTimeout(() => {
+                      if (anim.progress >= 90 && update === 0) {
+                        update = 1
+                        flag.style.opacity = 1
+                        setUserName(email)
+                        userName.style.opacity = 1
+                        firework.style.opacity = 1
+                        winner()
+                      }
+                    }, 500);
+
                   }
                 },
               });
@@ -633,7 +671,7 @@ function spin2(target) {
  */
 function spin() {
   if (spinCount === 0) return
-
+  del = 1200
 
   let columns = document.getElementsByClassName("slot-game-machine-column1")
 
@@ -646,21 +684,95 @@ function spin() {
       anim1Time1 = setTimeout(() => {
         spin1(columns[i], updateAnim1)
       }, del)
-      del -= 100
     }
-
+    del -= 100
     if (i % 2 === 0 && i !== 0) {
       columns[i].classList.add('even')
       anim1Time2 = setTimeout(() => {
         spin1(columns[i])
       }, del)
     }
-    del -= 100;
 
     if (i % 2 !== 0) {
       columns[i].classList.add('odd')
       anim1Time3 = setTimeout(() => {
         spin2(columns[i])
+      }, del)
+    }
+  }
+}
+
+function beckToStartText() {
+  const numColumns = 12;
+  const numRows = 120;
+  const row22 = document.getElementsByClassName("number-22");
+  const row58 = document.getElementsByClassName("number-58");
+
+
+  for (let i = 0; i < numColumns; i++) {
+
+    for (let j = 0; j < numRows; j++) {
+
+      if (i % 2 === 0 && j === 22) {
+        row22[i].textContent = START_TEXT[i];
+      }
+
+      if (i % 2 !== 0 && j === 58) {
+        row58[i].textContent = START_TEXT[i];
+      }
+    }
+  }
+}
+
+function resetSpine(position, target, func) {
+  anime({
+    targets: target,
+    top: position,
+    easing: "easeInOutCubic",
+    duration: 7000,
+    update: function (anim) {
+      if (anim.progress >= 10 && callBeckToStartText1Time) {
+        callBeckToStartText1Time = false
+        beckToStartText()
+      }
+      if (func) {
+        func(anim)
+      }
+    },
+    complete: function (anim) {
+      if (callResetGame1Time) {
+        callResetGame1Time = false
+        const restartGameId  = setTimeout(() => {
+          restartGame()
+        }, 2000)
+      }
+    }
+  });
+}
+
+
+function resetAnimGoToStart () {
+  let columns = document.getElementsByClassName("slot-game-machine-column2")
+
+  for (let i = 0; i <= columns.length - 1; i++) {
+
+    if (i === 0) {
+      anim1Time4 = setTimeout(() => {
+        resetSpine(4100,columns[i])
+      }, del)
+      del -= 100
+    }
+
+    if (i % 2 === 0 && i !== 0) {
+      anim1Time4 =setTimeout(() => {
+         resetSpine(4100, columns[i])
+      }, del)
+    }
+    del -= 100;
+
+    if (i % 2 !== 0) {
+      anim1Time4 = setTimeout(() => {
+        resetSpine(0, columns[i])
       }, del)
     }
   }
@@ -674,11 +786,10 @@ createSpinner();
  * This function sets up the initial state of the game, draws the contents of the slot machine, and adds event listeners for the start button and the volume button.
  */
 function runGame() {
-  console.log(1)
   victoryPosition()
   setUserName()
   drawContents();
-  setPrize(2000) //FIRST PLACEHOLDER
+  setPrize(2000) //FIRST PRIZE PLACEHOLDER
 
   const startSpinner = document.getElementById("startSpinner");
 
@@ -697,3 +808,62 @@ function runGame() {
 
 // Run the game
 runGame();
+
+// BG ANIMATION
+function bG() {
+  const container = document.getElementById('container');
+
+  function createAndAnimateImage() {
+    // Создаем элемент изображения
+    const img = document.createElement('img');
+    img.src = './assets/slot/symbol.svg';
+
+    const x = container.offsetWidth / 2;
+    const y = container.offsetHeight / 2;
+
+    img.style.position = 'absolute';
+    img.style.opacity = '0.6';
+    img.style.left = `${x}px`;
+    img.style.top = `${y}px`;
+
+    container.appendChild(img);
+
+    const dx = Math.random() * 10 - 5;
+    const dy = Math.random() * 10 - 5;
+
+    function moveImage() {
+      let currentX = parseFloat(img.style.left);
+      let currentY = parseFloat(img.style.top);
+
+      currentX += dx;
+      currentY += dy;
+
+      img.style.left = `${currentX}px`;
+      img.style.top = `${currentY}px`;
+
+      if (
+        currentX < -img.width ||
+        currentX > container.offsetWidth ||
+        currentY < -img.height ||
+        currentY > container.offsetHeight
+      ) {
+
+        container.removeChild(img);
+        createAndAnimateImage();
+      } else {
+        requestAnimationFrame(moveImage);
+      }
+    }
+
+    requestAnimationFrame(moveImage);
+  }
+
+
+  // BG SYMBOLS ANIMATION COUNT
+  for (let i = 0; i < 30; i++) {
+    createAndAnimateImage();
+  }
+
+}
+
+bG()
