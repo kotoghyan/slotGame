@@ -90,7 +90,7 @@ let block = 0;
 let createdColumns = 0;
 let currentIndex = 0;
 let prevIndex = 1;
-let timeoutWin = 0;
+let timeoutWin = 1000;
 
 /**
  * Function to clear animation timeouts
@@ -106,7 +106,7 @@ function clearAnimTimeouts() {
   createdColumns = 0;
   currentIndex = 0;
   prevIndex = 1;
-  timeoutWin = 0;
+  timeoutWin = 1000;
   callBeckToStartText1Time = true;
   callResetGame1Time = true;
   block = 0;
@@ -445,8 +445,8 @@ function animateSpinner(spinnerImage) {
       requestAnimationFrame(animate);
     } else {
       fetch().then((res) => {
-        winCondition = res.winner.toUpperCase();
-        email = res.email;
+        winCondition = res.winner.toUpperCase(); //PLACEHOLDER We need to get the win condition from the server response and set it here
+        email = res.email; //PLACEHOLDER
       });
 
       spin();
@@ -591,12 +591,23 @@ function winAnim() {
         document.querySelectorAll(".number-40")[currentIndex].style.color =
           "black";
 
+        if (currentIndex === 3) {
+          timeoutWin = 800;
+        }
+
+        if (currentIndex === 4) {
+          timeoutWin = 600;
+        }
+
+        if (currentIndex > 4) {
+          timeoutWin = 500;
+        }
+
         stopColumnAnim(column2);
         winAnim();
       }
     }
   }, timeoutWin);
-  timeoutWin = 1000;
 }
 
 /**
