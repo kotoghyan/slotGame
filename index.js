@@ -91,6 +91,7 @@ let createdColumns = 0;
 let currentIndex = 0;
 let prevIndex = 1;
 let timeoutWin = 1000;
+let colorBlocker = 0;
 
 /**
  * Function to clear animation timeouts
@@ -111,10 +112,12 @@ function clearAnimTimeouts() {
   callResetGame1Time = true;
   block = 0;
   del = 1200;
+  colorBlocker = 0;
 }
 
 //TEMP end
 const START_TEXT = [" ", " ", "L", "M", "C", "T", " ", "P", "L", "U", "S", " "];
+
 /**
  * Function to fetch data
  * @returns {Promise} - A promise that resolves with the winner and email
@@ -389,6 +392,14 @@ function drawContents() {
         char
       );
 
+      if (column % 2 === 0 && row === 1) {
+        charElem.style.color = "black";
+      }
+
+      if (column % 2 !== 0 && row === 118) {
+        charElem.style.color = "black";
+      }
+
       columnElem.appendChild(charElem);
     }
 
@@ -509,7 +520,6 @@ function winner() {
   }
 
 
-
   restartId = setTimeout(() => {
     resetAnimGoToStart();
     spinCount--
@@ -527,14 +537,12 @@ function stopColumnAnim(target) {
       letterAudio.currentTime = 0;
       letterAudio.play();
       if (createdColumns === 11) {
-        fireworksAudio.play();
         setTimeout(() => {
           rollFinishAudio.play();
-          soundTimeOutId = setTimeout(() => {
-            fireworksAudio.play();
-          }, 2000);
+          fireworksAudio.play();
           update = 1;
           flag.style.opacity = 1;
+          applauseAudio.play();
           setUserName(email);
           userName.style.opacity = 1;
           firework.style.opacity = 1;
@@ -608,9 +616,22 @@ function winAnim() {
  * @param {Object} anim - The anime.js animation object
  */
 function updateAnim1(anim) {
+  if (colorBlocker === 0) {
+    document.querySelectorAll(".number-118").forEach((el) => {
+      el.style.color = "rgba(0, 0, 0, 23%)";
+    });
+    document.querySelectorAll(".number-1").forEach((el) => {
+      el.style.color = "rgba(0, 0, 0, 23%)";
+    });
+  }
+
+  colorBlocker++;
+
+
   let loops1 = 0;
 
   if (anim.progress >= 40) {
+
     clearAnimTimeouts();
 
     document.querySelectorAll(".slot-game-machine-column1").forEach((el) => {
@@ -620,8 +641,8 @@ function updateAnim1(anim) {
     anime({
       targets: ".even",
       top: [
-        { value: "0px", duration: 0, delay: 0 },
-        { value: "-2200px", duration: 500, delay: 0 },
+        {value: "0px", duration: 0, delay: 0},
+        {value: "-2200px", duration: 500, delay: 0},
       ],
       easing: "linear",
       loop: true,
@@ -633,8 +654,8 @@ function updateAnim1(anim) {
     anime({
       targets: ".odd",
       top: [
-        { value: "0px", duration: 0, delay: 0 },
-        { value: "2200px", duration: 500, delay: 0 },
+        {value: "0px", duration: 0, delay: 0},
+        {value: "2200px", duration: 500, delay: 0},
       ],
       easing: "linear",
       loop: true,
@@ -730,10 +751,12 @@ function beckToStartText() {
     for (let j = 0; j < numRows; j++) {
       if (i % 2 === 0 && j === 22) {
         row22[i].textContent = START_TEXT[i];
+        row22[i].style.color = "black";
       }
 
       if (i % 2 !== 0 && j === 58) {
         row58[i].textContent = START_TEXT[i];
+        row58[i].style.color = "black";
       }
     }
   }
@@ -769,7 +792,6 @@ function resetSpine(position, target, func) {
 }
 
 function resetAnimGoToStart() {
-  applauseAudio.play();
   let columns = document.getElementsByClassName("slot-game-machine-column2");
 
   for (let i = 0; i <= columns.length - 1; i++) {
