@@ -287,6 +287,8 @@ const goldFlagImagesPaths = [
  * Function to start the game
  */
 function start() {
+  if (spinCount === 0) return;
+
   handlePullAudio.play();
   const startSpinner = document.getElementById("startSpinner");
   animateSpinner(startSpinner);
@@ -506,10 +508,11 @@ function winner() {
     animateFlag(goldFlagImages);
   }
 
-  spinCount--;
+
 
   restartId = setTimeout(() => {
     resetAnimGoToStart();
+    spinCount--
   }, 5000);
 }
 
@@ -523,9 +526,7 @@ function stopColumnAnim(target) {
     complete: function () {
       letterAudio.currentTime = 0;
       letterAudio.play();
-    },
-    update: function (anim) {
-      if (anim.progress >= 90 && createdColumns === 11) {
+      if (createdColumns === 11) {
         fireworksAudio.play();
         setTimeout(() => {
           rollFinishAudio.play();
@@ -545,7 +546,12 @@ function stopColumnAnim(target) {
 }
 
 function winAnim() {
-  setTimeout(() => {
+  let winAnimTimeOut = 0
+  if (winAnimTimeOut) {
+    clearTimeout(winAnimTimeOut);
+  }
+
+  winAnimTimeOut = setTimeout(() => {
     const columnContainer1 = document.querySelector(
       ".slot-game-machine-column-container1"
     );
@@ -571,16 +577,20 @@ function winAnim() {
           winCondition[currentIndex];
         document.querySelectorAll(".number-40")[currentIndex].style.color =
           "black";
+
         winAnim();
       } else {
         document.querySelector(`.col${prevIndex}`).remove();
         document.querySelector(`.colNum${currentIndex}`).after(column2);
+
         prevIndex++;
         currentIndex++;
+
         document.querySelectorAll(".number-40")[currentIndex].textContent =
           winCondition[currentIndex];
         document.querySelectorAll(".number-40")[currentIndex].style.color =
           "black";
+
         stopColumnAnim(column2);
         winAnim();
       }
@@ -588,16 +598,14 @@ function winAnim() {
   }, timeoutWin);
   timeoutWin = 1000;
 }
+
 /**
  * Function to update the animation
  * This function checks the progress of the animation and performs various actions based on the progress.
  * @param {Object} anim - The anime.js animation object
  */
-
-
 function updateAnim1(anim) {
   let loops1 = 0;
-  let loops2 = 2;
 
   if (anim.progress >= 40) {
     clearAnimTimeouts();
@@ -679,7 +687,6 @@ function spin2(target) {
  * This function checks if the spinCount is 0 and if there are any columns in the slot machine, and then starts the spinning animation for each column.
  */
 function spin() {
-  if (spinCount === 0) return;
   del = 1200;
 
   let columns = document.getElementsByClassName("slot-game-machine-column1");
