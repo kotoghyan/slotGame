@@ -29,10 +29,14 @@ const userName = document.querySelector(".slot-game-machine-user-email-text");
 const blueText1 = document.querySelector(".slot-game-machine-prize-text2");
 const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
-// Create an audio element
-const audio = new Audio('./assets/fireworks.mp3');
+// Create an fireworksAudio element
+const fireworksAudio = new Audio('./assets/fireworks.mp3');
+const applauseAudio = new Audio('./assets/applause.mp3');
+const rollFinishAudio = new Audio('./assets/roll_finish.mp3');
+const handlePullAudio = new Audio('./assets/handle_pull.mp3');
 
-audio.loop = true;
+
+
 
 
 
@@ -74,7 +78,6 @@ function setPrize(prizes) {
 }
 
 blueText2.textContent = "CREDIT"; //PLACEHOLDER
-
 
 //TEMP start
 let callBeckToStartText1Time = true
@@ -280,6 +283,7 @@ const goldFlagImagesPaths = [
  * Function to start the game
  */
 function start() {
+  handlePullAudio.play()
   const startSpinner = document.getElementById("startSpinner");
   animateSpinner(startSpinner);
 }
@@ -289,11 +293,15 @@ function start() {
  */
 function restartGame() {
   clearTimeout(restartGameId)
-  flag.style.opacity = '0'
-  userName.style.opacity = '0'
-  firework.style.opacity = '0'
-  audio.pause()
-  audio.currentTime = 0
+
+  handlePullAudio.pause()
+  handlePullAudio.currentTime = 0
+  applauseAudio.pause()
+  applauseAudio.currentTime = 0
+  fireworksAudio.pause()
+  fireworksAudio.currentTime = 0
+  rollFinishAudio.pause()
+  rollFinishAudio.currentTime = 0
 
   clearTimeout(soundTimeOutId)
   setUserName()
@@ -491,10 +499,6 @@ function winner() {
 
   spinCount--;
 
-  soundTimeOutId = setTimeout(() => {
-    audio.play()
-  }, 500);
-
   restartId = setTimeout(() => {
     resetAnimGoToStart()
   }, 5000)
@@ -609,8 +613,13 @@ function updateAnim1(anim) {
                 easing: "cubicBezier(0.140, 0.435, 0.780, 1.385)",
                 update: function (anim) {
                   if (anim.progress >= 90 && update === 0) {
+                    fireworksAudio.play()
                     setTimeout(() => {
                       if (anim.progress >= 90 && update === 0) {
+                        rollFinishAudio.play()
+                        soundTimeOutId = setTimeout(() => {
+                          fireworksAudio.play()
+                        }, 2000)
                         update = 1
                         flag.style.opacity = 1
                         setUserName(email)
@@ -618,7 +627,7 @@ function updateAnim1(anim) {
                         firework.style.opacity = 1
                         winner()
                       }
-                    }, 500);
+                    }, 1200);
 
                   }
                 },
@@ -740,6 +749,9 @@ function resetSpine(position, target, func) {
       }
     },
     complete: function (anim) {
+      flag.style.opacity = '0'
+      userName.style.opacity = '0'
+      firework.style.opacity = '0'
       if (callResetGame1Time) {
         callResetGame1Time = false
         const restartGameId  = setTimeout(() => {
@@ -752,6 +764,7 @@ function resetSpine(position, target, func) {
 
 
 function resetAnimGoToStart () {
+  applauseAudio.play()
   let columns = document.getElementsByClassName("slot-game-machine-column2")
 
   for (let i = 0; i <= columns.length - 1; i++) {
