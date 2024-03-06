@@ -16,7 +16,9 @@
  * the game's state, and the game's interactions.
  */
 // Get DOM elements
-const volumeButton = document.getElementById("slotGameVideoVolumeControlButton");
+const volumeButton = document.getElementById(
+  "slotGameVideoVolumeControlButton"
+);
 const volumeIcon = document.getElementById("slotGameVideoVolumeControl");
 const flag = document.querySelector(".slot-game-flag");
 const video = document.getElementById("slotGameVideo");
@@ -30,37 +32,29 @@ const blueText1 = document.querySelector(".slot-game-machine-prize-text2");
 const prize = document.querySelector(".slot-game-machine-prize-text-second");
 const blueText2 = document.querySelector(".slot-game-machine-prize-text3");
 // Create an fireworksAudio element
-const fireworksAudio = new Audio('./assets/fireworks.mp3');
-const applauseAudio = new Audio('./assets/applause.mp3');
-const rollFinishAudio = new Audio('./assets/roll_finish.mp3');
-const handlePullAudio = new Audio('./assets/handle_pull.mp3');
+const letterAudio = new Audio("./assets/letter.mp3");
+const fireworksAudio = new Audio("./assets/fireworks.mp3");
+const applauseAudio = new Audio("./assets/applause.mp3");
+const rollFinishAudio = new Audio("./assets/roll_finish.mp3");
+const handlePullAudio = new Audio("./assets/handle_pull.mp3");
 
-
-
-
-
-
-
-
-
-const frontVideo = createElem("source", 'frontVideo');
+const frontVideo = createElem("source", "frontVideo");
 frontVideo.id = "slotGameVideoSource";
 frontVideo.src = "assets/tv/declare_winner_walkthrough.mp4";
 frontVideo.type = "video/mp4";
 video.appendChild(frontVideo);
 
-
 let spinCount = 3;
 
 let winCondition = ""; //We need to get the win condition from the server response and set it here
-let email = ""
+let email = "";
 
 /**
  * Function to set the user's name
  * @param {string} email - The user's email
  */
 function setUserName(email = "") {
-  userName.textContent = email
+  userName.textContent = email;
 }
 
 /**
@@ -80,37 +74,47 @@ function setPrize(prizes) {
 blueText2.textContent = "CREDIT"; //PLACEHOLDER
 
 //TEMP start
-let callBeckToStartText1Time = true
-let callResetGame1Time = true
-let anim1Time1
-let anim1Time2
-let anim1Time3
-let anim1Time4
-let anim1Time5
-let anim1Time6
-let soundTimeOutId
-let restartId
-let restartGameId
-let del = 1200
+let callBeckToStartText1Time = true;
+let callResetGame1Time = true;
+let anim1Time1;
+let anim1Time2;
+let anim1Time3;
+let anim1Time4;
+let anim1Time5;
+let anim1Time6;
+let soundTimeOutId;
+let restartId;
+let restartGameId;
+let del = 1200;
+let block = 0;
+let createdColumns = 0;
+let currentIndex = 0;
+let prevIndex = 1;
+let timeoutWin = 0;
 
 /**
  * Function to clear animation timeouts
  */
 function clearAnimTimeouts() {
-  clearTimeout(anim1Time1)
-  clearTimeout(anim1Time2)
-  clearTimeout(anim1Time3)
-  clearTimeout(anim1Time4)
-  clearTimeout(anim1Time5)
-  clearTimeout(anim1Time6)
-  clearTimeout(restartId)
-  callBeckToStartText1Time = true
-  callResetGame1Time = true
-  del = 1200
+  clearTimeout(anim1Time1);
+  clearTimeout(anim1Time2);
+  clearTimeout(anim1Time3);
+  clearTimeout(anim1Time4);
+  clearTimeout(anim1Time5);
+  clearTimeout(anim1Time6);
+  clearTimeout(restartId);
+  createdColumns = 0;
+  currentIndex = 0;
+  prevIndex = 1;
+  timeoutWin = 0;
+  callBeckToStartText1Time = true;
+  callResetGame1Time = true;
+  block = 0;
+  del = 1200;
 }
 
 //TEMP end
-const START_TEXT = [' ', ' ', 'L', 'M', 'C', 'T', ' ', 'P', 'L', 'U', 'S', ' '];
+const START_TEXT = [" ", " ", "L", "M", "C", "T", " ", "P", "L", "U", "S", " "];
 /**
  * Function to fetch data
  * @returns {Promise} - A promise that resolves with the winner and email
@@ -120,7 +124,7 @@ function fetch() {
     setTimeout(() => {
       resolve({
         winner: "asdfghjklmnn",
-        email: "asdfg*******@gmail.com"
+        email: "asdfg*******@gmail.com",
       });
     }, 3000);
   });
@@ -176,114 +180,114 @@ const spinnerImagesPaths = [
 
 // Paths for the bronze flag images
 const bronzeFlagImagesPaths = [
-  './assets/slot/bronzeFlag/flag_00000.png',
-  './assets/slot/bronzeFlag/flag_00001.png',
-  './assets/slot/bronzeFlag/flag_00002.png',
-  './assets/slot/bronzeFlag/flag_00003.png',
-  './assets/slot/bronzeFlag/flag_00004.png',
-  './assets/slot/bronzeFlag/flag_00005.png',
-  './assets/slot/bronzeFlag/flag_00006.png',
-  './assets/slot/bronzeFlag/flag_00007.png',
-  './assets/slot/bronzeFlag/flag_00008.png',
-  './assets/slot/bronzeFlag/flag_00009.png',
-  './assets/slot/bronzeFlag/flag_00010.png',
-  './assets/slot/bronzeFlag/flag_00011.png',
-  './assets/slot/bronzeFlag/flag_00012.png',
-  './assets/slot/bronzeFlag/flag_00013.png',
-  './assets/slot/bronzeFlag/flag_00014.png',
-  './assets/slot/bronzeFlag/flag_00015.png',
-  './assets/slot/bronzeFlag/flag_00016.png',
-  './assets/slot/bronzeFlag/flag_00017.png',
-  './assets/slot/bronzeFlag/flag_00018.png',
-  './assets/slot/bronzeFlag/flag_00019.png',
-  './assets/slot/bronzeFlag/flag_00020.png',
-  './assets/slot/bronzeFlag/flag_00021.png',
-  './assets/slot/bronzeFlag/flag_00022.png',
-  './assets/slot/bronzeFlag/flag_00023.png',
-  './assets/slot/bronzeFlag/flag_00024.png',
-  './assets/slot/bronzeFlag/flag_00025.png',
-  './assets/slot/bronzeFlag/flag_00026.png',
-  './assets/slot/bronzeFlag/flag_00027.png',
-  './assets/slot/bronzeFlag/flag_00028.png',
-  './assets/slot/bronzeFlag/flag_00029.png',
-  './assets/slot/bronzeFlag/flag_00030.png',
-]
+  "./assets/slot/bronzeFlag/flag_00000.png",
+  "./assets/slot/bronzeFlag/flag_00001.png",
+  "./assets/slot/bronzeFlag/flag_00002.png",
+  "./assets/slot/bronzeFlag/flag_00003.png",
+  "./assets/slot/bronzeFlag/flag_00004.png",
+  "./assets/slot/bronzeFlag/flag_00005.png",
+  "./assets/slot/bronzeFlag/flag_00006.png",
+  "./assets/slot/bronzeFlag/flag_00007.png",
+  "./assets/slot/bronzeFlag/flag_00008.png",
+  "./assets/slot/bronzeFlag/flag_00009.png",
+  "./assets/slot/bronzeFlag/flag_00010.png",
+  "./assets/slot/bronzeFlag/flag_00011.png",
+  "./assets/slot/bronzeFlag/flag_00012.png",
+  "./assets/slot/bronzeFlag/flag_00013.png",
+  "./assets/slot/bronzeFlag/flag_00014.png",
+  "./assets/slot/bronzeFlag/flag_00015.png",
+  "./assets/slot/bronzeFlag/flag_00016.png",
+  "./assets/slot/bronzeFlag/flag_00017.png",
+  "./assets/slot/bronzeFlag/flag_00018.png",
+  "./assets/slot/bronzeFlag/flag_00019.png",
+  "./assets/slot/bronzeFlag/flag_00020.png",
+  "./assets/slot/bronzeFlag/flag_00021.png",
+  "./assets/slot/bronzeFlag/flag_00022.png",
+  "./assets/slot/bronzeFlag/flag_00023.png",
+  "./assets/slot/bronzeFlag/flag_00024.png",
+  "./assets/slot/bronzeFlag/flag_00025.png",
+  "./assets/slot/bronzeFlag/flag_00026.png",
+  "./assets/slot/bronzeFlag/flag_00027.png",
+  "./assets/slot/bronzeFlag/flag_00028.png",
+  "./assets/slot/bronzeFlag/flag_00029.png",
+  "./assets/slot/bronzeFlag/flag_00030.png",
+];
 
 // Paths for the silver flag images
 const silverFlagImagesPaths = [
-  './assets/slot/flag/Flag_00080.png',
-  './assets/slot/flag/Flag_00081.png',
-  './assets/slot/flag/Flag_00082.png',
-  './assets/slot/flag/Flag_00083.png',
-  './assets/slot/flag/Flag_00084.png',
-  './assets/slot/flag/Flag_00085.png',
-  './assets/slot/flag/Flag_00086.png',
-  './assets/slot/flag/Flag_00087.png',
-  './assets/slot/flag/Flag_00088.png',
-  './assets/slot/flag/Flag_00089.png',
-  './assets/slot/flag/Flag_00090.png',
-  './assets/slot/flag/Flag_00091.png',
-  './assets/slot/flag/Flag_00092.png',
-  './assets/slot/flag/Flag_00093.png',
-  './assets/slot/flag/Flag_00094.png',
-  './assets/slot/flag/Flag_00095.png',
-  './assets/slot/flag/Flag_00096.png',
-  './assets/slot/flag/Flag_00097.png',
-  './assets/slot/flag/Flag_00098.png',
-  './assets/slot/flag/Flag_00099.png',
-  './assets/slot/flag/Flag_00100.png',
-  './assets/slot/flag/Flag_00101.png',
-  './assets/slot/flag/Flag_00102.png',
-  './assets/slot/flag/Flag_00103.png',
-  './assets/slot/flag/Flag_00104.png',
-  './assets/slot/flag/Flag_00105.png',
-  './assets/slot/flag/Flag_00106.png',
-  './assets/slot/flag/Flag_00107.png',
-  './assets/slot/flag/Flag_00108.png',
-  './assets/slot/flag/Flag_00109.png',
-  './assets/slot/flag/Flag_00110.png',
-]
+  "./assets/slot/flag/Flag_00080.png",
+  "./assets/slot/flag/Flag_00081.png",
+  "./assets/slot/flag/Flag_00082.png",
+  "./assets/slot/flag/Flag_00083.png",
+  "./assets/slot/flag/Flag_00084.png",
+  "./assets/slot/flag/Flag_00085.png",
+  "./assets/slot/flag/Flag_00086.png",
+  "./assets/slot/flag/Flag_00087.png",
+  "./assets/slot/flag/Flag_00088.png",
+  "./assets/slot/flag/Flag_00089.png",
+  "./assets/slot/flag/Flag_00090.png",
+  "./assets/slot/flag/Flag_00091.png",
+  "./assets/slot/flag/Flag_00092.png",
+  "./assets/slot/flag/Flag_00093.png",
+  "./assets/slot/flag/Flag_00094.png",
+  "./assets/slot/flag/Flag_00095.png",
+  "./assets/slot/flag/Flag_00096.png",
+  "./assets/slot/flag/Flag_00097.png",
+  "./assets/slot/flag/Flag_00098.png",
+  "./assets/slot/flag/Flag_00099.png",
+  "./assets/slot/flag/Flag_00100.png",
+  "./assets/slot/flag/Flag_00101.png",
+  "./assets/slot/flag/Flag_00102.png",
+  "./assets/slot/flag/Flag_00103.png",
+  "./assets/slot/flag/Flag_00104.png",
+  "./assets/slot/flag/Flag_00105.png",
+  "./assets/slot/flag/Flag_00106.png",
+  "./assets/slot/flag/Flag_00107.png",
+  "./assets/slot/flag/Flag_00108.png",
+  "./assets/slot/flag/Flag_00109.png",
+  "./assets/slot/flag/Flag_00110.png",
+];
 
 // Paths for the gold flag images
 const goldFlagImagesPaths = [
-  './assets/slot/goldenFlag/flag_00000.png',
-  './assets/slot/goldenFlag/flag_00001.png',
-  './assets/slot/goldenFlag/flag_00002.png',
-  './assets/slot/goldenFlag/flag_00003.png',
-  './assets/slot/goldenFlag/flag_00004.png',
-  './assets/slot/goldenFlag/flag_00005.png',
-  './assets/slot/goldenFlag/flag_00006.png',
-  './assets/slot/goldenFlag/flag_00007.png',
-  './assets/slot/goldenFlag/flag_00008.png',
-  './assets/slot/goldenFlag/flag_00009.png',
-  './assets/slot/goldenFlag/flag_00010.png',
-  './assets/slot/goldenFlag/flag_00011.png',
-  './assets/slot/goldenFlag/flag_00012.png',
-  './assets/slot/goldenFlag/flag_00013.png',
-  './assets/slot/goldenFlag/flag_00014.png',
-  './assets/slot/goldenFlag/flag_00015.png',
-  './assets/slot/goldenFlag/flag_00016.png',
-  './assets/slot/goldenFlag/flag_00017.png',
-  './assets/slot/goldenFlag/flag_00018.png',
-  './assets/slot/goldenFlag/flag_00019.png',
-  './assets/slot/goldenFlag/flag_00020.png',
-  './assets/slot/goldenFlag/flag_00021.png',
-  './assets/slot/goldenFlag/flag_00022.png',
-  './assets/slot/goldenFlag/flag_00023.png',
-  './assets/slot/goldenFlag/flag_00024.png',
-  './assets/slot/goldenFlag/flag_00025.png',
-  './assets/slot/goldenFlag/flag_00026.png',
-  './assets/slot/goldenFlag/flag_00027.png',
-  './assets/slot/goldenFlag/flag_00028.png',
-  './assets/slot/goldenFlag/flag_00029.png',
-  './assets/slot/goldenFlag/flag_00030.png',
-]
+  "./assets/slot/goldenFlag/flag_00000.png",
+  "./assets/slot/goldenFlag/flag_00001.png",
+  "./assets/slot/goldenFlag/flag_00002.png",
+  "./assets/slot/goldenFlag/flag_00003.png",
+  "./assets/slot/goldenFlag/flag_00004.png",
+  "./assets/slot/goldenFlag/flag_00005.png",
+  "./assets/slot/goldenFlag/flag_00006.png",
+  "./assets/slot/goldenFlag/flag_00007.png",
+  "./assets/slot/goldenFlag/flag_00008.png",
+  "./assets/slot/goldenFlag/flag_00009.png",
+  "./assets/slot/goldenFlag/flag_00010.png",
+  "./assets/slot/goldenFlag/flag_00011.png",
+  "./assets/slot/goldenFlag/flag_00012.png",
+  "./assets/slot/goldenFlag/flag_00013.png",
+  "./assets/slot/goldenFlag/flag_00014.png",
+  "./assets/slot/goldenFlag/flag_00015.png",
+  "./assets/slot/goldenFlag/flag_00016.png",
+  "./assets/slot/goldenFlag/flag_00017.png",
+  "./assets/slot/goldenFlag/flag_00018.png",
+  "./assets/slot/goldenFlag/flag_00019.png",
+  "./assets/slot/goldenFlag/flag_00020.png",
+  "./assets/slot/goldenFlag/flag_00021.png",
+  "./assets/slot/goldenFlag/flag_00022.png",
+  "./assets/slot/goldenFlag/flag_00023.png",
+  "./assets/slot/goldenFlag/flag_00024.png",
+  "./assets/slot/goldenFlag/flag_00025.png",
+  "./assets/slot/goldenFlag/flag_00026.png",
+  "./assets/slot/goldenFlag/flag_00027.png",
+  "./assets/slot/goldenFlag/flag_00028.png",
+  "./assets/slot/goldenFlag/flag_00029.png",
+  "./assets/slot/goldenFlag/flag_00030.png",
+];
 
 /**
  * Function to start the game
  */
 function start() {
-  handlePullAudio.play()
+  handlePullAudio.play();
   const startSpinner = document.getElementById("startSpinner");
   animateSpinner(startSpinner);
 }
@@ -292,29 +296,31 @@ function start() {
  * Function to restart the game
  */
 function restartGame() {
-  clearTimeout(restartGameId)
+  clearTimeout(restartGameId);
 
-  handlePullAudio.pause()
-  handlePullAudio.currentTime = 0
-  applauseAudio.pause()
-  applauseAudio.currentTime = 0
-  fireworksAudio.pause()
-  fireworksAudio.currentTime = 0
-  rollFinishAudio.pause()
-  rollFinishAudio.currentTime = 0
+  handlePullAudio.pause();
+  handlePullAudio.currentTime = 0;
+  applauseAudio.pause();
+  applauseAudio.currentTime = 0;
+  fireworksAudio.pause();
+  fireworksAudio.currentTime = 0;
+  letterAudio.pause();
+  letterAudio.currentTime = 0;
+  rollFinishAudio.pause();
+  rollFinishAudio.currentTime = 0;
 
-  clearTimeout(soundTimeOutId)
-  setUserName()
+  clearTimeout(soundTimeOutId);
+  setUserName();
 
-  document.querySelector('.slot-game-machine-column-container').remove()
+  document.querySelector(".slot-game-machine-column-container").remove();
 
-  drawContents()
+  drawContents();
 
   const startSpinner = document.getElementById("startSpinner");
   startSpinner.addEventListener("click", start);
 
-  victoryPosition()
-  setPrize(2300) // NEXT TWO PLACEHOLDER
+  victoryPosition();
+  setPrize(2300); // NEXT TWO PLACEHOLDER
 }
 
 /**
@@ -359,10 +365,12 @@ function drawContents() {
   columnContainer.appendChild(columnContainer1);
 
   for (let column = 0; column < numColumns; column++) {
-    const columnElem = createElem("div", `slot-game-machine-column1`);
+    const columnElem = createElem(
+      "div",
+      `slot-game-machine-column1 col${column}`
+    );
 
     for (let row = 0; row < numRows; row++) {
-
       let char = characters[Math.floor(Math.random() * characters.length)];
 
       if (column % 2 === 0 && row === 1) {
@@ -373,7 +381,11 @@ function drawContents() {
         char = START_TEXT[column];
       }
 
-      const charElem = createElem("h2", `slot-game-machine-row number-${row}`, char);
+      const charElem = createElem(
+        "h2",
+        `slot-game-machine-row number-${row}`,
+        char
+      );
 
       columnElem.appendChild(charElem);
     }
@@ -382,7 +394,6 @@ function drawContents() {
   }
 
   container.appendChild(columnContainer);
-
 }
 
 /**
@@ -410,8 +421,7 @@ spinnerImagesPaths.forEach((path) => {
   const img = new Image();
   img.src = path;
   spinnerImages.push(img);
-})
-
+});
 
 /**
  * Function to animate the spinner
@@ -434,7 +444,7 @@ function animateSpinner(spinnerImage) {
     } else {
       fetch().then((res) => {
         winCondition = res.winner.toUpperCase();
-        email = res.email
+        email = res.email;
       });
 
       spin();
@@ -442,7 +452,7 @@ function animateSpinner(spinnerImage) {
   }
 
   animate();
-  startSpinner.removeEventListener('click', start);
+  startSpinner.removeEventListener("click", start);
 }
 
 /**
@@ -452,11 +462,11 @@ function animateSpinner(spinnerImage) {
  * @returns {Array} - An array of Image objects
  */
 function loadImages(paths) {
-  return paths.map(path => {
+  return paths.map((path) => {
     const img = new Image();
     img.src = path;
     return img;
-  })
+  });
 }
 
 // Load images for the flags
@@ -476,12 +486,11 @@ function animateFlag(flagImages) {
     flag.src = flagImages[index].src;
     index = (index + 1) % flagImages.length;
     flagAnimationId = requestAnimationFrame(animate);
-  }
+  };
   cancelAnimationFrame(flagAnimationId);
 
   animate();
 }
-
 
 /**
  * Function to determine the winner
@@ -490,56 +499,131 @@ function animateFlag(flagImages) {
  */
 function winner() {
   if (spinCount === 3) {
-    animateFlag(bronzeFlagImages)
+    animateFlag(bronzeFlagImages);
   } else if (spinCount === 2) {
-    animateFlag(silverFlagImages)
+    animateFlag(silverFlagImages);
   } else if (spinCount === 1) {
-    animateFlag(goldFlagImages)
+    animateFlag(goldFlagImages);
   }
 
   spinCount--;
 
   restartId = setTimeout(() => {
-    resetAnimGoToStart()
-  }, 5000)
+    resetAnimGoToStart();
+  }, 5000);
 }
 
+
+function stopColumnAnim(target) {
+  anime({
+    targets: target,
+    top: `${2050}px`,
+    duration: 700,
+    easing: "cubicBezier(0.140, 0.435, 0.780, 1.385)",
+    complete: function () {
+      letterAudio.currentTime = 0;
+      letterAudio.play();
+    },
+    update: function (anim) {
+      if (anim.progress >= 90 && createdColumns === 11) {
+        fireworksAudio.play();
+        setTimeout(() => {
+          rollFinishAudio.play();
+          soundTimeOutId = setTimeout(() => {
+            fireworksAudio.play();
+          }, 2000);
+          update = 1;
+          flag.style.opacity = 1;
+          setUserName(email);
+          userName.style.opacity = 1;
+          firework.style.opacity = 1;
+          winner();
+        }, 1200);
+      }
+    },
+  });
+}
+
+function winAnim() {
+  setTimeout(() => {
+    const columnContainer1 = document.querySelector(
+      ".slot-game-machine-column-container1"
+    );
+    if (createdColumns < 12) {
+      const numRows = 60;
+
+      const column2 = createElem(
+        "div",
+        `slot-game-machine-column2 colNum${createdColumns}`
+      );
+      createdColumns++;
+
+      for (let j = 0; j < numRows; j++) {
+        const char = characters[Math.floor(Math.random() * characters.length)];
+        const row = createElem("h2", `slot-game-machine-row number-${j}`, char);
+        column2.appendChild(row);
+      }
+      if (document.querySelector(".col0")) {
+        columnContainer1.insertBefore(column2, document.querySelector(".col0"));
+        document.querySelector(".col0").remove();
+        stopColumnAnim(column2);
+        document.querySelectorAll(".number-40")[currentIndex].textContent =
+          winCondition[currentIndex];
+        document.querySelectorAll(".number-40")[currentIndex].style.color =
+          "black";
+        winAnim();
+      } else {
+        document.querySelector(`.col${prevIndex}`).remove();
+        document.querySelector(`.colNum${currentIndex}`).after(column2);
+        prevIndex++;
+        currentIndex++;
+        document.querySelectorAll(".number-40")[currentIndex].textContent =
+          winCondition[currentIndex];
+        document.querySelectorAll(".number-40")[currentIndex].style.color =
+          "black";
+        stopColumnAnim(column2);
+        winAnim();
+      }
+    }
+  }, timeoutWin);
+  timeoutWin = 1000;
+}
 /**
  * Function to update the animation
  * This function checks the progress of the animation and performs various actions based on the progress.
  * @param {Object} anim - The anime.js animation object
  */
+
+
 function updateAnim1(anim) {
   let loops1 = 0;
   let loops2 = 2;
 
   if (anim.progress >= 40) {
-    clearAnimTimeouts()
+    clearAnimTimeouts();
 
-    document
-      .querySelectorAll(".slot-game-machine-column1")
-      .forEach((el) => {
-        anime.remove(el);
-      });
+    document.querySelectorAll(".slot-game-machine-column1").forEach((el) => {
+      anime.remove(el);
+    });
 
     anime({
       targets: ".even",
       top: [
-        {value: "0px", duration: 0, delay: 0},
-        {value: "-2200px", duration: 500, delay: 0},
+        { value: "0px", duration: 0, delay: 0 },
+        { value: "-2200px", duration: 500, delay: 0 },
       ],
       easing: "linear",
       loop: true,
       loopComplete: function () {
         loops1++;
       },
-    })
+    });
 
     anime({
       targets: ".odd",
       top: [
-        {value: "0px", duration: 0, delay: 0},
-        {value: "2200px", duration: 500, delay: 0},
+        { value: "0px", duration: 0, delay: 0 },
+        { value: "2200px", duration: 500, delay: 0 },
       ],
       easing: "linear",
       loop: true,
@@ -547,93 +631,9 @@ function updateAnim1(anim) {
         loops1++;
       },
       update: function () {
-        if (winCondition && loops1 === 6) {
-          del = 1200
-          document
-            .querySelectorAll(".slot-game-machine-column1")
-            .forEach((el) => {
-              anime.remove(el);
-            });
-          document
-            .querySelectorAll(".slot-game-machine-column1")
-            .forEach((el) => {
-              el.remove();
-            });
-
-          const numColumns = 12;
-          const numRows = 60;
-          const columnContainer = document.querySelector(
-            ".slot-game-machine-column-container"
-          );
-          const columnContainer2 = createElem(
-            "div",
-            `slot-game-machine-column-container2`
-          );
-
-          for (let i = 0; i < numColumns; i++) {
-            loops2++;
-
-            const column2 = createElem("div", `slot-game-machine-column2`);
-
-            for (let j = 0; j < numRows; j++) {
-              const char =
-                characters[Math.floor(Math.random() * characters.length)];
-              const row = createElem(
-                "h2",
-                `slot-game-machine-row number-${j}`,
-                char
-              );
-              column2.appendChild(row);
-            }
-            columnContainer2.appendChild(column2);
-          }
-          columnContainer.appendChild(columnContainer2);
-
-          let val = 0;
-
-          document.querySelectorAll(".number-40").forEach((el, index) => {
-            el.textContent = winCondition[index];
-          });
-
-          let update = 0
-
-          const row40 = document.querySelectorAll(".number-40");
-
-          row40.forEach((el) => {
-            el.style.color = 'black'
-          })
-
-          document
-            .querySelectorAll(".slot-game-machine-column2")
-            .forEach((el) => {
-              anime({
-                targets: el,
-                top: `${2030}px`,
-                duration: 700 + val,
-                easing: "cubicBezier(0.140, 0.435, 0.780, 1.385)",
-                update: function (anim) {
-                  if (anim.progress >= 90 && update === 0) {
-                    fireworksAudio.play()
-                    setTimeout(() => {
-                      if (anim.progress >= 90 && update === 0) {
-                        rollFinishAudio.play()
-                        soundTimeOutId = setTimeout(() => {
-                          fireworksAudio.play()
-                        }, 2000)
-                        update = 1
-                        flag.style.opacity = 1
-                        setUserName(email)
-                        userName.style.opacity = 1
-                        firework.style.opacity = 1
-                        winner()
-                      }
-                    }, 1200);
-
-                  }
-                },
-              });
-              val += 100;
-            });
+        if (winCondition && loops1 === 6 && block === 0) {
+          block++;
+          winAnim();
         }
       },
     });
@@ -654,9 +654,9 @@ function spin1(target, func) {
     duration: 4000,
     update: function (anim) {
       if (func) {
-        func(anim)
+        func(anim);
       }
-    }
+    },
   });
 }
 
@@ -679,34 +679,33 @@ function spin2(target) {
  * This function checks if the spinCount is 0 and if there are any columns in the slot machine, and then starts the spinning animation for each column.
  */
 function spin() {
-  if (spinCount === 0) return
-  del = 1200
+  if (spinCount === 0) return;
+  del = 1200;
 
-  let columns = document.getElementsByClassName("slot-game-machine-column1")
+  let columns = document.getElementsByClassName("slot-game-machine-column1");
 
-  if (columns.length === 0) return
+  if (columns.length === 0) return;
 
   for (let i = 0; i <= columns.length - 1; i++) {
-
     if (i === 0) {
-      columns[i].classList.add('even')
+      columns[i].classList.add("even");
       anim1Time1 = setTimeout(() => {
-        spin1(columns[i], updateAnim1)
-      }, del)
+        spin1(columns[i], updateAnim1);
+      }, del);
     }
-    del -= 100
+    del -= 100;
     if (i % 2 === 0 && i !== 0) {
-      columns[i].classList.add('even')
+      columns[i].classList.add("even");
       anim1Time2 = setTimeout(() => {
-        spin1(columns[i])
-      }, del)
+        spin1(columns[i]);
+      }, del);
     }
 
     if (i % 2 !== 0) {
-      columns[i].classList.add('odd')
+      columns[i].classList.add("odd");
       anim1Time3 = setTimeout(() => {
-        spin2(columns[i])
-      }, del)
+        spin2(columns[i]);
+      }, del);
     }
   }
 }
@@ -717,11 +716,8 @@ function beckToStartText() {
   const row22 = document.getElementsByClassName("number-22");
   const row58 = document.getElementsByClassName("number-58");
 
-
   for (let i = 0; i < numColumns; i++) {
-
     for (let j = 0; j < numRows; j++) {
-
       if (i % 2 === 0 && j === 22) {
         row22[i].textContent = START_TEXT[i];
       }
@@ -741,52 +737,50 @@ function resetSpine(position, target, func) {
     duration: 7000,
     update: function (anim) {
       if (anim.progress >= 10 && callBeckToStartText1Time) {
-        callBeckToStartText1Time = false
-        beckToStartText()
+        callBeckToStartText1Time = false;
+        beckToStartText();
       }
       if (func) {
-        func(anim)
+        func(anim);
       }
     },
     complete: function (anim) {
-      flag.style.opacity = '0'
-      userName.style.opacity = '0'
-      firework.style.opacity = '0'
+      flag.style.opacity = "0";
+      userName.style.opacity = "0";
+      firework.style.opacity = "0";
       if (callResetGame1Time) {
-        callResetGame1Time = false
-        const restartGameId  = setTimeout(() => {
-          restartGame()
-        }, 2000)
+        callResetGame1Time = false;
+        const restartGameId = setTimeout(() => {
+          restartGame();
+        }, 2000);
       }
-    }
+    },
   });
 }
 
-
-function resetAnimGoToStart () {
-  applauseAudio.play()
-  let columns = document.getElementsByClassName("slot-game-machine-column2")
+function resetAnimGoToStart() {
+  applauseAudio.play();
+  let columns = document.getElementsByClassName("slot-game-machine-column2");
 
   for (let i = 0; i <= columns.length - 1; i++) {
-
     if (i === 0) {
       anim1Time4 = setTimeout(() => {
-        resetSpine(4100,columns[i])
-      }, del)
-      del -= 100
+        resetSpine(4100, columns[i]);
+      }, del);
+      del -= 100;
     }
 
     if (i % 2 === 0 && i !== 0) {
-      anim1Time4 =setTimeout(() => {
-         resetSpine(4100, columns[i])
-      }, del)
+      anim1Time4 = setTimeout(() => {
+        resetSpine(4100, columns[i]);
+      }, del);
     }
     del -= 100;
 
     if (i % 2 !== 0) {
       anim1Time4 = setTimeout(() => {
-        resetSpine(0, columns[i])
-      }, del)
+        resetSpine(0, columns[i]);
+      }, del);
     }
   }
 }
@@ -799,10 +793,10 @@ createSpinner();
  * This function sets up the initial state of the game, draws the contents of the slot machine, and adds event listeners for the start button and the volume button.
  */
 function runGame() {
-  victoryPosition()
-  setUserName()
+  victoryPosition();
+  setUserName();
   drawContents();
-  setPrize(2000) //FIRST PRIZE PLACEHOLDER
+  setPrize(2000); //FIRST PRIZE PLACEHOLDER
 
   const startSpinner = document.getElementById("startSpinner");
 
@@ -824,18 +818,18 @@ runGame();
 
 // BG ANIMATION
 function bG() {
-  const container = document.getElementById('container');
+  const container = document.getElementById("container");
 
   function createAndAnimateImage() {
     // Создаем элемент изображения
-    const img = document.createElement('img');
-    img.src = './assets/slot/symbol.svg';
+    const img = document.createElement("img");
+    img.src = "./assets/slot/symbol.svg";
 
     const x = container.offsetWidth / 2;
     const y = container.offsetHeight / 2;
 
-    img.style.position = 'absolute';
-    img.style.opacity = '0.6';
+    img.style.position = "absolute";
+    img.style.opacity = "0.6";
     img.style.left = `${x}px`;
     img.style.top = `${y}px`;
 
@@ -860,7 +854,6 @@ function bG() {
         currentY < -img.height ||
         currentY > container.offsetHeight
       ) {
-
         container.removeChild(img);
         createAndAnimateImage();
       } else {
@@ -871,12 +864,10 @@ function bG() {
     requestAnimationFrame(moveImage);
   }
 
-
   // BG SYMBOLS ANIMATION COUNT
   for (let i = 0; i < 30; i++) {
     createAndAnimateImage();
   }
-
 }
 
-bG()
+bG();
