@@ -591,15 +591,7 @@ function winAnim() {
         document.querySelectorAll(".number-40")[currentIndex].style.color =
           "black";
 
-        if (currentIndex === 3) {
-          timeoutWin = 800;
-        }
-
-        if (currentIndex === 4) {
-          timeoutWin = 600;
-        }
-
-        if (currentIndex > 4) {
+        if (currentIndex > 0) {
           timeoutWin = 500;
         }
 
