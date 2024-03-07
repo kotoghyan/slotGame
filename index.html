@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
             integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
 <div class="slot-game-wrapper">
@@ -19,7 +18,7 @@
     <div id="container">
     </div>
     <div id="fireworksId">
-            <img src="assets/animation.gif" alt="fireworks" class="fireworks"/>
+        <img src="assets/animation.gif" alt="fireworks" class="fireworks"/>
     </div>
     <div class="slot-game-bg-effects">
         <img src="assets/bgShine.svg" alt="shine" class="rotating"/>
@@ -69,7 +68,18 @@
     </div>
     <div class="slot-game-spinner-wrapper" id="slotGameMachineSpinnerContainer">
     </div>
+    <div class="slot-game-audio-mute-button"
+         id="slotGameAudioVolumeControlButton">
+        <img src="assets/icons/volumeOff.svg"
+             id="slotGameAudioVolumeControl"
+             alt="volume control"
+             class="slot-game-video-mute"/>
+    </div>
 </div>
+<audio muted autoplay loop id="bgAudio">
+    <source src="assets/slotBgSound.mp3" type="audio/mp3">
+</audio>
+
 <script src="index.js"></script>
 </body>
 </html>

@@ -19,7 +19,11 @@
 const volumeButton = document.getElementById(
   "slotGameVideoVolumeControlButton"
 );
+const bgVolumeButton = document.getElementById("slotGameAudioVolumeControlButton");
+
 const volumeIcon = document.getElementById("slotGameVideoVolumeControl");
+const bgVolumeIcon = document.getElementById("slotGameAudioVolumeControl");
+
 const flag = document.querySelector(".slot-game-flag");
 const video = document.getElementById("slotGameVideo");
 const bgVideo = document.getElementById("slotGameVideoBg");
@@ -37,12 +41,9 @@ const fireworksAudio = new Audio("./assets/fireworks.mp3");
 const applauseAudio = new Audio("./assets/applause.mp3");
 const rollFinishAudio = new Audio("./assets/roll_finish.mp3");
 const handlePullAudio = new Audio("./assets/handle_pull.mp3");
-const bgAudio = new Audio("./assets/slotBgSound.mp3");
+const bgAudio = document.getElementById("bgAudio");
 
-
-
-
-
+fireworksAudio.loop = true;
 
 
 const frontVideo = createElem("source", "frontVideo");
@@ -135,7 +136,7 @@ function fetch() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        winner: "asdfghjklmnn",
+        winner: "  LMCT PLUS ",
         email: "asdfg*******@gmail.com",
       });
     }, 3000);
@@ -300,12 +301,6 @@ const goldFlagImagesPaths = [
  */
 function start() {
   if (spinCount === 0) return;
-  if (firstOpen === 0) {
-    bgAudio.play();
-    bgAudio.loop = true;
-    bgAudio.volume = 0.2;
-    firstOpen++;
-  }
 
 
   handlePullAudio.play();
@@ -556,6 +551,7 @@ function stopColumnAnim(target) {
         setTimeout(() => {
           rollFinishAudio.play();
           fireworksAudio.play();
+          bgAudio.pause();
           update = 1;
           flag.style.opacity = 1;
           applauseAudio.play();
@@ -799,6 +795,8 @@ function resetSpine(position, target, func) {
       firework.style.opacity = "0";
       if (callResetGame1Time) {
         callResetGame1Time = false;
+        fireworksAudio.pause();
+        bgAudio.play();
         const restartGameId = setTimeout(() => {
           restartGame();
         }, 2000);
@@ -857,6 +855,17 @@ function runGame() {
     } else {
       video.muted = true;
       volumeIcon.src = "assets/icons/volumeOff.svg";
+    }
+  });
+
+  bgVolumeButton.addEventListener("click", () => {
+    if (bgAudio.muted) {
+      bgAudio.volume = 0.1;
+      bgAudio.muted = false;
+      bgVolumeIcon.src = "assets/icons/volumeOn.svg";
+    } else {
+      bgAudio.muted = true;
+      bgVolumeIcon.src = "assets/icons/volumeOff.svg";
     }
   });
 }
