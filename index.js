@@ -37,12 +37,20 @@ const fireworksAudio = new Audio("./assets/fireworks.mp3");
 const applauseAudio = new Audio("./assets/applause.mp3");
 const rollFinishAudio = new Audio("./assets/roll_finish.mp3");
 const handlePullAudio = new Audio("./assets/handle_pull.mp3");
+const bgAudio = new Audio("./assets/slotBgSound.mp3");
+
+
+
+
+
+
 
 const frontVideo = createElem("source", "frontVideo");
 frontVideo.id = "slotGameVideoSource";
 frontVideo.src = "assets/tv/declare_winner_walkthrough.mp4";
 frontVideo.type = "video/mp4";
 video.appendChild(frontVideo);
+
 
 let spinCount = 3;
 
@@ -92,6 +100,7 @@ let currentIndex = 0;
 let prevIndex = 1;
 let timeoutWin = 1000;
 let colorBlocker = 0;
+let firstOpen = 0;
 
 /**
  * Function to clear animation timeouts
@@ -291,6 +300,13 @@ const goldFlagImagesPaths = [
  */
 function start() {
   if (spinCount === 0) return;
+  if (firstOpen === 0) {
+    bgAudio.play();
+    bgAudio.loop = true;
+    bgAudio.volume = 0.2;
+    firstOpen++;
+  }
+
 
   handlePullAudio.play();
   const startSpinner = document.getElementById("startSpinner");
