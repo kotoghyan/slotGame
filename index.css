@@ -213,12 +213,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, .0);
+  background: rgba(0, 0, 0, 0);
   border-radius: 24%;
-  top: 60px;
-  right: 60px;
-  width: 100px;
-  height: 100px;
+  top: 1px;
+  right: 1px;
+  width: 400px;
+  height: 400px;
   cursor: pointer;
   opacity: 0.2;
   transition: all 0.3s linear;
