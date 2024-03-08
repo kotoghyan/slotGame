@@ -46,7 +46,7 @@ const bgAudio = document.getElementById("bgAudio");
 
 fireworksAudio.loop = true;
 scoreAudio.loop = true
-scoreAudio.volume = .5
+scoreAudio.volume = .2
 bgAudio.loop = true
 
 const frontVideo = createElem("source", "frontVideo");
