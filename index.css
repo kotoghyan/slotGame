@@ -213,23 +213,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .0);
   border-radius: 24%;
   top: 60px;
   right: 60px;
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   opacity: 0.2;
   transition: all 0.3s linear;
-}
-.slot-game-audio-mute-button:hover {
-  opacity: 1;
-
-}
-
-.slot-game-audio-mute-button img {
-  width: 24px;
 }
 
 .slot-game-machine-wrapper {
