@@ -867,7 +867,7 @@ function runGame() {
   bgVolumeButton.addEventListener("click", () => {
     if (bgAudio.muted) {
       bgAudio.play()
-      bgAudio.volume = 0.1;
+      bgAudio.volume = 0.2;
       bgAudio.muted = false;
     } else {
       bgAudio.muted = true;
