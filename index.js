@@ -41,10 +41,13 @@ const fireworksAudio = new Audio("./assets/fireworks.mp3");
 const applauseAudio = new Audio("./assets/applause.mp3");
 const rollFinishAudio = new Audio("./assets/roll_finish.mp3");
 const handlePullAudio = new Audio("./assets/handle_pull.mp3");
+const scoreAudio =  new Audio("./assets/Score.mp3");
 const bgAudio = document.getElementById("bgAudio");
 
 fireworksAudio.loop = true;
-
+scoreAudio.loop = true
+scoreAudio.volume = .2
+bgAudio.loop = true
 
 const frontVideo = createElem("source", "frontVideo");
 frontVideo.id = "slotGameVideoSource";
@@ -326,6 +329,7 @@ function restartGame() {
   letterAudio.currentTime = 0;
   rollFinishAudio.pause();
   rollFinishAudio.currentTime = 0;
+  scoreAudio.currentTime = 0
 
   clearTimeout(soundTimeOutId);
   setUserName();
@@ -551,6 +555,7 @@ function stopColumnAnim(target) {
       letterAudio.play();
       if (createdColumns === 11) {
         setTimeout(() => {
+          scoreAudio.pause()
           rollFinishAudio.play();
           fireworksAudio.play();
           bgAudio.pause();
@@ -631,7 +636,7 @@ function winAnim() {
  */
 function updateAnim1(anim) {
   if (colorBlocker === 0) {
-    let backToStartInterval = setTimeout(() => {
+    backToStartInterval = setTimeout(() => {
       document.querySelectorAll(".number-118").forEach((el) => {
         el.style.color = "rgba(0, 0, 0, 23%)";
       });
@@ -728,6 +733,7 @@ function spin2(target) {
  * This function checks if the spinCount is 0 and if there are any columns in the slot machine, and then starts the spinning animation for each column.
  */
 function spin() {
+  scoreAudio.play()
   del = 1200;
 
   let columns = document.getElementsByClassName("slot-game-machine-column1");
@@ -865,12 +871,11 @@ function runGame() {
 
   bgVolumeButton.addEventListener("click", () => {
     if (bgAudio.muted) {
-      bgAudio.volume = 0.1;
+      bgAudio.play()
+      bgAudio.volume = 0.4;
       bgAudio.muted = false;
-      bgVolumeIcon.src = "assets/icons/volumeOn.svg";
     } else {
       bgAudio.muted = true;
-      bgVolumeIcon.src = "assets/icons/volumeOff.svg";
     }
   });
 }
