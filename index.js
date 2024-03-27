@@ -102,6 +102,7 @@ let prevIndex = 1;
 let timeoutWin = 1000;
 let colorBlocker = 0;
 let firstOpen = 0;
+let backToStartInterval;
 
 /**
  * Function to clear animation timeouts
@@ -114,6 +115,7 @@ function clearAnimTimeouts() {
   clearTimeout(anim1Time5);
   clearTimeout(anim1Time6);
   clearTimeout(restartId);
+  clearTimeout(backToStartInterval);
   createdColumns = 0;
   currentIndex = 0;
   prevIndex = 1;
@@ -629,12 +631,15 @@ function winAnim() {
  */
 function updateAnim1(anim) {
   if (colorBlocker === 0) {
-    document.querySelectorAll(".number-118").forEach((el) => {
-      el.style.color = "rgba(0, 0, 0, 23%)";
-    });
-    document.querySelectorAll(".number-1").forEach((el) => {
-      el.style.color = "rgba(0, 0, 0, 23%)";
-    });
+    let backToStartInterval = setTimeout(() => {
+      document.querySelectorAll(".number-118").forEach((el) => {
+        el.style.color = "rgba(0, 0, 0, 23%)";
+      });
+      document.querySelectorAll(".number-1").forEach((el) => {
+        el.style.color = "rgba(0, 0, 0, 23%)";
+      });
+    }, 500);
+
   }
 
   colorBlocker++;
